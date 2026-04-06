@@ -1,0 +1,89 @@
+{
+  "reportDate": "April 1, 2026",
+
+  "stats": {
+    "totalItems": 14,
+    "completed": 10,
+    "inProgress": 3,
+    "pending": 1
+  },
+
+  "migrationItems": [
+    { "name": "Brands",                       "status": "done"    },
+    { "name": "Carrier",                      "status": "done"    },
+    { "name": "States – Ecuador",             "status": "done"    },
+    { "name": "Cities – Ecuador",             "status": "done"    },
+    { "name": "Cuentas GL QB Rec",            "status": "done"    },
+    { "name": "Incoterm",                     "status": "done"    },
+    { "name": "Unit",                         "status": "done"    },
+    { "name": "Business Unit",                "status": "done"    },
+    { "name": "Manufacturer",                 "status": "working" },
+    { "name": "Item Type",                    "status": "done"    },
+    { "name": "Item Category",                "status": "done"    },
+    { "name": "Items (Products)",             "status": "working" },
+    { "name": "Accounts (Client - Vendors)",  "status": "working" },
+    { "name": "Contacs",                      "status": "pending" }
+  ],
+
+  "products": {
+    "REC": { "total": 197601, "migrated": 128, "status": "working" },
+    "RUS": { "total": 202034, "migrated": 0,   "status": "pending" },
+    "RMX": { "total": 164648, "migrated": 0,   "status": "pending" },
+    "RBR": { "total": 117351, "migrated": 0,   "status": "pending" }
+  },
+
+  "photos": {
+    "REC": { "total": 179215, "status": "pending" },
+    "RUS": { "total": 201882, "status": "pending" },
+    "RBR": { "total": 123156, "status": "pending" },
+    "RMX": { "total": 160273, "status": "pending" }
+  },
+
+  "storage": {
+    "RUS":          { "gb": 660,   "status": "done",    "pct": 100 },
+    "RMX":          { "gb": 519,   "status": "pending", "pct": 0   },
+    "RBR":          { "gb": 327,   "status": "pending", "pct": 0   },
+    "PhotosCas":    { "gb": 6.97,  "status": "pending", "pct": 0   },
+    "PhotosProxxi": { "gb": 24.2,  "status": "pending", "pct": 0   }
+  },
+
+  "clients": {
+    "REC": { "total": 2552, "active": null },
+    "RUS": { "total": 1394, "active": 1383 },
+    "RMX": null,
+    "RBR": null
+  },
+
+  "vendors": {
+    "REC": { "total": 2779, "active": 86   },
+    "RUS": { "total": 2594, "active": 2584 },
+    "RMX": null,
+    "RBR": null
+  },
+
+  "contacts": {
+    "REC": 4595,
+    "RUS": 3538,
+    "RMX": null,
+    "RBR": null
+  },
+
+  "orders": {
+    "REC": {
+      "SO": 11,
+      "SOIds": [
+        "EC2200047","EC2400028","RECD2500024","RECD2500040","RECD2500041",
+        "RECD2600000","RECD2600001","RECD2600002","RECD2600003","RECD2600004","RECD2600005"
+      ],
+      "PO": 8,
+      "POIds": [
+        "EC2400022","RECD2600001","RECD2600009","RECD2600011",
+        "RECD2600012","RECD2600013","RECD2600014","RECD2600015"
+      ],
+      "Quotes": 265
+    },
+    "RUS": null,
+    "RMX": null,
+    "RBR": null
+  }
+}
