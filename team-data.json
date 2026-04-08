@@ -1,0 +1,93 @@
+[
+  {
+    "date": "2026-04-07",
+    "dateLabel": "Martes 7 de abril de 2026",
+    "members": [
+      {
+        "name": "Luis Potte",
+        "tasks": [
+          {"desc": "Creación de SO a partir de la quote", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Implementar botones para conexión con QuickBooks (items/productos)", "status": "pending", "imprevista": false, "colaborativa": false},
+          {"desc": "Corrección de errores de Quotation", "status": "done", "imprevista": true, "colaborativa": false}
+        ]
+      },
+      {
+        "name": "Celia Giraldo Paez",
+        "tasks": [
+          {"desc": "Presentación RFQ (Juan Gómez) – 2:00 p.m.", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Natalia Martinez"]},
+          {"desc": "Preparación y ejecución de presentación Redix", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Natalia Martinez"]},
+          {"desc": "QA de cotización", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Claudia Herrera", "Natalia Martinez"]},
+          {"desc": "QA cuentas", "status": "done", "imprevista": true, "colaborativa": true, "collabWith": ["Claudia Herrera", "Natalia Martinez"]}
+        ]
+      },
+      {
+        "name": "Natalia Martinez",
+        "tasks": [
+          {"desc": "Documento de roles y permisos de Monday Enterprise", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Presentación RFQ (Juan Gómez) – 2:00 p.m.", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Celia Giraldo Paez"]},
+          {"desc": "Preparación y ejecución de presentación Redix", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Celia Giraldo Paez"]},
+          {"desc": "QA de cotización", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Claudia Herrera", "Celia Giraldo Paez"]},
+          {"desc": "QA productos", "status": "done", "imprevista": true, "colaborativa": true, "collabWith": ["Claudia Herrera", "Celia Giraldo Paez"]}
+        ]
+      },
+      {
+        "name": "Claudia Herrera",
+        "tasks": [
+          {"desc": "Migración de data legacy a redsis_core (Productos – REC)", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Migración de Sales Rep", "status": "done", "imprevista": true, "colaborativa": false},
+          {"desc": "QA de cotización", "status": "done", "imprevista": false, "colaborativa": true, "collabWith": ["Natalia Martinez", "Celia Giraldo Paez"]}
+        ]
+      },
+      {
+        "name": "Jessica Rodgers",
+        "tasks": [
+          {"desc": "Creación de tablas de Sales Rep", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Revisión de cambios por Prisma", "status": "pending", "imprevista": false, "colaborativa": false},
+          {"desc": "Corrección de errores por Prisma", "status": "pending", "imprevista": false, "colaborativa": false},
+          {"desc": "Migración de cuentas (REC)", "status": "pending", "imprevista": false, "colaborativa": false},
+          {"desc": "Ecosistema de tablas (usuarios)", "status": "done", "imprevista": true, "colaborativa": false},
+          {"desc": "Ecosistema de tablas (roles)", "status": "done", "imprevista": true, "colaborativa": false},
+          {"desc": "Ecosistema de tablas (organización)", "status": "done", "imprevista": true, "colaborativa": false},
+          {"desc": "Ecosistema de tablas (cuentas)", "status": "done", "imprevista": true, "colaborativa": false},
+          {"desc": "Limpieza de data dummy", "status": "done", "imprevista": true, "colaborativa": false}
+        ]
+      },
+      {
+        "name": "Bryan Romero",
+        "tasks": [
+          {"desc": "Máquinas virtuales entregadas", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Settings Redix revisados", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Deploy automático productivo", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Roles y permisos Enterprise revisados", "status": "done", "imprevista": false, "colaborativa": false}
+        ]
+      },
+      {
+        "name": "Maria Carolina Ortega Mancera",
+        "tasks": [
+          {"desc": "Comparación QuickBooks vs Redix", "status": "done", "imprevista": false, "colaborativa": false}
+        ]
+      },
+      {
+        "name": "Mike Habib",
+        "tasks": [
+          {"desc": "Proposal en PandaDocs", "status": "done", "imprevista": false, "colaborativa": false},
+          {"desc": "Envío directo PDF a impresora", "status": "pending", "imprevista": false, "colaborativa": false}
+        ]
+      },
+      {
+        "name": "Luis Dominguez Marquez",
+        "tasks": [
+          {"desc": "CRUD SO y PO QuickBooks", "status": "done", "imprevista": false, "colaborativa": false}
+        ]
+      }
+    ],
+    "nextDay": [
+      {"person": "Luis Potte", "task": "Implementar botones para conexión con QuickBooks (items/productos)", "fromToday": true},
+      {"person": "Jessica Rodgers", "task": "Revisión de cambios a nivel de base de datos por Prisma", "fromToday": true},
+      {"person": "Jessica Rodgers", "task": "Corrección de errores ocasionados por Prisma", "fromToday": true},
+      {"person": "Jessica Rodgers", "task": "Migración de data legacy a redsis_core (Cuentas – REC)", "fromToday": true},
+      {"person": "Mike Habib", "task": "Revisión de proceso para envío directo de PDF a impresora", "fromToday": true},
+      {"person": "Celia Giraldo Paez", "task": "Revisión de proceso para envío directo de PDF a impresora", "fromToday": true}
+    ]
+  }
+]
