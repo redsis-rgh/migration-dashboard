@@ -424,6 +424,7 @@
     }
     .tm-chart-card canvas {
       display: block;
+      width: 100%;
       max-height: 250px;
     }
 
@@ -895,7 +896,7 @@
       <div class="page-header-row">
         <div>
           <h1>Data Migration Report</h1>
-          <p>Estimated volume to migrate · Current task status · Progress by company</p>
+          <p>What is already live in redix_core, what remains by source company, and where the migration still needs attribution.</p>
         </div>
         <div class="badge-live">In Progress</div>
       </div>
@@ -906,25 +907,25 @@
       <div class="stat-card total">
         <div class="stat-icon">📋</div>
         <div class="stat-value" id="stat-total-val">—</div>
-        <div class="stat-label">Total Items</div>
-        <div class="stat-pct">Catalogs &amp; modules</div>
+        <div class="stat-label">Setup Modules Ready</div>
+        <div class="stat-pct" id="stat-total-pct">—</div>
       </div>
       <div class="stat-card done">
-        <div class="stat-icon">✅</div>
+        <div class="stat-icon">🧩</div>
         <div class="stat-value" id="stat-done-val">—</div>
-        <div class="stat-label">Completed</div>
+        <div class="stat-label">Live Products</div>
         <div class="stat-pct" id="stat-done-pct">—</div>
       </div>
       <div class="stat-card working">
-        <div class="stat-icon">🔄</div>
+        <div class="stat-icon">👥</div>
         <div class="stat-value" id="stat-working-val">—</div>
-        <div class="stat-label">In Progress</div>
+        <div class="stat-label">Mapped Accounts</div>
         <div class="stat-pct" id="stat-working-pct">—</div>
       </div>
       <div class="stat-card pending">
-        <div class="stat-icon">⏳</div>
+        <div class="stat-icon">🖼️</div>
         <div class="stat-value" id="stat-pending-val">—</div>
-        <div class="stat-label">Pending</div>
+        <div class="stat-label">Live Photo Records</div>
         <div class="stat-pct" id="stat-pending-pct">—</div>
       </div>
     </div>
@@ -984,7 +985,7 @@
         <div class="card-header">
           <div class="card-title">
             <div class="card-title-icon" style="background:#f0fdf4;font-size:14px;">📊</div>
-            Volume to Migrate
+            Live Volumes vs Target
           </div>
         </div>
         <div class="volume-section">
@@ -994,7 +995,7 @@
             <div class="volume-group-header">🧩 Items (Products)</div>
             <div id="volume-products-rows"><!-- Rendered by app.js --></div>
             <div class="volume-total-row">
-              <span class="volume-total-label">Total Products</span>
+              <span class="volume-total-label">Target Products</span>
               <span class="volume-total-num" id="volume-products-total">—</span>
             </div>
           </div>
@@ -1039,7 +1040,7 @@
         <div class="card-header">
           <div class="card-title">
             <div class="card-title-icon" style="background:#fdf4ff;font-size:14px;">👥</div>
-            Clients · Vendors · Contacts
+            Accounts Migration Progress
           </div>
         </div>
 
@@ -1049,7 +1050,7 @@
         <div style="padding:4px 16px 0;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Vendors</div>
         <div id="vendors-grid"><!-- Rendered by app.js --></div>
 
-        <div style="padding:4px 16px 0;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Contacts</div>
+        <div style="padding:4px 16px 0;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Contacts currently live in redix_core</div>
         <div id="contacts-grid" style="margin-bottom:4px"><!-- Rendered by app.js --></div>
       </div>
 
@@ -1071,7 +1072,7 @@
     <div class="note-card">
       <div class="note-icon">📝</div>
       <div>
-        <strong>Note:</strong> These values correspond to the current volume identified in the legacy system and represent the target dataset for migration. Progress percentages reflect the status of configuration modules and catalogs. Transactional data volumes (products, photos, clients, vendors, contacts) are still pending migration.
+        <strong>Note:</strong> Legacy totals by company represent the target dataset for migration. Product and photo volumes shown as live in `redix_core` are already mixed, so they cannot yet be attributed back to the original company database. Client and vendor progress is based on `business.account_accounting_mapping`, compared against legacy totals by company and role.
         <br/><br/>
         <strong><sup>*</sup> Dynamic values disclaimer:</strong> Values marked with <sup>*</sup> — including Clients, Vendors, Contacts, and Open Orders for RUS, RMX, and RBR — are subject to change due to ongoing activity in the legacy system. Since these source systems remain active at the time of this report, final record counts may differ from those captured here at the moment of actual migration.
       </div>
@@ -1091,11 +1092,11 @@
     <!-- PAGE HEADER -->
     <div class="tm-page-header">
       <div class="tm-page-header-left">
-        <h1>Team Performance Dashboard</h1>
-        <p>Real-time team metrics, workload tracking, and performance indicators</p>
+        <h1>Monday Board Performance</h1>
+        <p>KPIs y carga del equipo basados directamente en el board Redix Portal de Monday</p>
       </div>
       <select id="team-date-select" class="tm-date-selector">
-        <option value="">Select Date</option>
+        <option value="">Syncing Monday board...</option>
       </select>
     </div>
 
@@ -1107,39 +1108,39 @@
     <!-- CHARTS GRID -->
     <div class="tm-charts-grid" id="team-charts-grid">
       <div class="tm-chart-card">
-        <h3>Tasks Completed vs Pending</h3>
+        <h3>Done vs Open by Owner</h3>
         <canvas id="chartTeamBar"></canvas>
       </div>
       <div class="tm-chart-card">
-        <h3>Team Participation</h3>
+        <h3>Items by Module</h3>
         <canvas id="chartTeamPie"></canvas>
       </div>
       <div class="tm-chart-card">
-        <h3>Workload Distribution</h3>
+        <h3>Open Load by Owner</h3>
         <canvas id="chartTeamLoad"></canvas>
       </div>
       <div class="tm-chart-card">
-        <h3>Compliance Rate</h3>
+        <h3>Module Progress</h3>
         <canvas id="chartTeamCompliance"></canvas>
       </div>
     </div>
 
     <!-- FILTER & SORT TOOLBAR -->
     <div class="tm-filter-toolbar">
-      <button class="tm-filter-btn active" onclick="filterTeamTasks('all')">All</button>
-      <button class="tm-filter-btn" onclick="filterTeamTasks('completed')">Completadas</button>
-      <button class="tm-filter-btn" onclick="filterTeamTasks('pending')">Pendientes</button>
-      <button class="tm-filter-btn" onclick="filterTeamTasks('unexpected')">Imprevistas</button>
-      <button class="tm-filter-btn" onclick="filterTeamTasks('collaborative')">Colaborativas</button>
+      <button class="tm-filter-btn active" data-filter="all" onclick="filterTeamTasks('all', this)">All</button>
+      <button class="tm-filter-btn" data-filter="done" onclick="filterTeamTasks('done', this)">Done</button>
+      <button class="tm-filter-btn" data-filter="working" onclick="filterTeamTasks('working', this)">Working on it</button>
+      <button class="tm-filter-btn" data-filter="blocked" onclick="filterTeamTasks('blocked', this)">Blocked / Late</button>
+      <button class="tm-filter-btn" data-filter="todo" onclick="filterTeamTasks('todo', this)">To Do</button>
     </div>
 
     <div class="tm-sort-controls">
-      <button class="tm-sort-btn" onclick="sortTeamPersons('workload')">Mayor Carga</button>
-      <button class="tm-sort-btn" onclick="sortTeamPersons('compliance')">Mayor Cumplimiento</button>
-      <button class="tm-sort-btn" onclick="sortTeamPersons('pending')">Más Pendientes</button>
+      <button class="tm-sort-btn active" data-sort="workload" onclick="sortTeamPersons('workload', this)">Most Open</button>
+      <button class="tm-sort-btn" data-sort="progress" onclick="sortTeamPersons('progress', this)">Best Progress</button>
+      <button class="tm-sort-btn" data-sort="blocked" onclick="sortTeamPersons('blocked', this)">Most Blocked</button>
     </div>
 
-    <input type="text" class="tm-search-input" id="team-search" placeholder="Filter by person name..." onkeyup="filterTeamPersons()">
+    <input type="text" class="tm-search-input" id="team-search" placeholder="Filtrar por persona..." onkeyup="filterTeamPersons()">
 
     <!-- PERSON CARDS -->
     <div class="tm-persons-container" id="team-persons-container">
@@ -1148,7 +1149,7 @@
 
     <!-- COLLABORATIVE TASKS -->
     <div class="tm-collab-container" id="team-collab-container">
-      <h3>Collaborative Tasks</h3>
+      <h3>Module Progress</h3>
       <div class="tm-collab-items" id="team-collab-items">
         <!-- Rendered by app.js -->
       </div>
@@ -1156,7 +1157,7 @@
 
     <!-- NEXT DAY PENDING -->
     <div class="tm-nextday-container" id="team-nextday-container">
-      <h3>Pending for Next Day</h3>
+      <h3>Due Soon / Overdue</h3>
       <div class="tm-collab-items" id="team-nextday-items">
         <!-- Rendered by app.js -->
       </div>
@@ -1164,13 +1165,13 @@
 
     <!-- EXECUTIVE SUMMARY -->
     <div class="tm-executive-summary" id="team-executive-summary">
-      <h3>Executive Summary</h3>
+      <h3>Board Snapshot</h3>
       <p id="team-executive-text">—</p>
     </div>
 
     <!-- FINDINGS -->
     <div class="tm-findings">
-      <h3>Findings</h3>
+      <h3>Modules Needing Attention</h3>
       <div id="team-findings">
         <!-- Rendered by app.js -->
       </div>
@@ -1178,7 +1179,7 @@
 
     <!-- RECOMMENDATIONS -->
     <div class="tm-recommendations">
-      <h3>Recommendations</h3>
+      <h3>Owner Work Snapshot</h3>
       <div id="team-recommendations">
         <!-- Rendered by app.js -->
       </div>
@@ -1186,22 +1187,22 @@
 
     <!-- PM COMMENT -->
     <div class="tm-pm-comment" id="team-pm-comment">
-      <h3>PM Comment</h3>
+      <h3>How To Read This Board</h3>
       <p id="team-pm-text">—</p>
     </div>
 
     <!-- HISTORICAL TREND -->
     <div class="tm-trend-section" id="team-trend-section" style="display:none">
-      <h3>Compliance Trend</h3>
+      <h3>Board Trend</h3>
       <canvas id="chartTeamTrend"></canvas>
     </div>
 
     <!-- PRINT BUTTON -->
-    <button class="tm-print-btn" onclick="window.print()">Print Dashboard</button>
+    <button class="tm-print-btn" onclick="window.print()">Print Board Snapshot</button>
 
     <!-- TIMESTAMP FOOTER -->
     <div class="tm-timestamp">
-      Generated <span id="team-footer-date">—</span> · Confidential
+      Synced <span id="team-footer-date">—</span> · Monday board snapshot
     </div>
 
   </div>
@@ -1228,22 +1229,25 @@
       teamView.style.display = 'block';
       tabs[1].classList.add('active');
       topbarTag.textContent = 'Team Performance';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          TeamDashboard.refresh();
+        });
+      });
     }
   }
 
   function filterTeamTasks(filter) {
-    const buttons = document.querySelectorAll('.tm-filter-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    // Filter logic to be implemented by app.js
+    TeamDashboard.filterTasks(filter);
   }
 
   function sortTeamPersons(sort) {
-    // Sort logic to be implemented by app.js
+    TeamDashboard.sortPersons(sort);
   }
 
   function filterTeamPersons() {
-    // Search/filter logic to be implemented by app.js
+    const query = document.getElementById('team-search').value;
+    TeamDashboard.filterBySearch(query);
   }
 </script>
 </body>

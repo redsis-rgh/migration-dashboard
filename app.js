@@ -68,18 +68,107 @@ function setStyle(id, prop, value) {
   if (el) el.style[prop] = value;
 }
 
+function toNumber(value) {
+  return Number(value || 0);
+}
+
+function getProductsModel(products) {
+  if (products?.summary && products?.byCompany) {
+    return {
+      summary: {
+        targetTotal: toNumber(products.summary.targetTotal),
+        migrated: toNumber(products.summary.migrated),
+        active: toNumber(products.summary.active || products.summary.migrated),
+        sourceLabel: products.summary.sourceLabel || 'Current in redix_core',
+        note: products.summary.note || ''
+      },
+      byCompany: products.byCompany
+    };
+  }
+
+  const byCompany = products || {};
+  const targetTotal = Object.values(byCompany).reduce((s, v) => s + (v ? toNumber(v.total) : 0), 0);
+  const migrated = Object.values(byCompany).reduce((s, v) => s + (v ? toNumber(v.migrated) : 0), 0);
+
+  return {
+    summary: {
+      targetTotal,
+      migrated,
+      active: migrated,
+      sourceLabel: 'Current in redix_core',
+      note: ''
+    },
+    byCompany
+  };
+}
+
+function getPhotosModel(photos) {
+  if (photos?.summary && photos?.byCompany) {
+    return {
+      summary: {
+        targetTotal: toNumber(photos.summary.targetTotal),
+        migrated: toNumber(photos.summary.migrated),
+        active: toNumber(photos.summary.active || photos.summary.migrated),
+        sourceLabel: photos.summary.sourceLabel || 'Current in redix_core',
+        note: photos.summary.note || ''
+      },
+      byCompany: photos.byCompany
+    };
+  }
+
+  const byCompany = photos || {};
+  const targetTotal = Object.values(byCompany).reduce((s, v) => s + (v ? toNumber(v.total) : 0), 0);
+
+  return {
+    summary: {
+      targetTotal,
+      migrated: 0,
+      active: 0,
+      sourceLabel: 'Current in redix_core',
+      note: ''
+    },
+    byCompany
+  };
+}
+
+function getAccountSummary(data) {
+  const sections = [data.clients || {}, data.vendors || {}];
+  return sections.reduce((acc, section) => {
+    Object.values(section).forEach((entry) => {
+      if (!entry) return;
+      acc.total += toNumber(entry.total);
+      acc.active += toNumber(entry.active);
+      acc.migrated += toNumber(entry.migrated);
+    });
+    return acc;
+  }, { total: 0, active: 0, migrated: 0 });
+}
+
+function renderProgressBar(pct, color) {
+  const width = pct > 0 ? Math.max(pct, 0.02).toFixed(3) : '0';
+  return `
+    <div style="height:7px;background:var(--surface);border-radius:99px;overflow:hidden">
+      <div style="width:${width}%;height:100%;background:${color};border-radius:99px"></div>
+    </div>`;
+}
+
 // ── Stats ─────────────────────────────────────
-function renderStats(stats) {
-  const { totalItems, completed, inProgress, pending } = stats;
+function renderStats(data) {
+  const { totalItems, completed, inProgress, pending } = data.stats;
+  const productModel = getProductsModel(data.products);
+  const photoModel = getPhotosModel(data.photos);
+  const accountSummary = getAccountSummary(data);
+  const remainingAccounts = Math.max(accountSummary.total - accountSummary.migrated, 0);
 
-  setText('stat-total-val',    totalItems);
-  setText('stat-done-val',     completed);
-  setText('stat-working-val',  inProgress);
-  setText('stat-pending-val',  pending);
+  setText('stat-total-val', `${completed} / ${totalItems}`);
+  setText('stat-done-val', formatNumber(productModel.summary.migrated));
+  setText('stat-working-val', formatNumber(accountSummary.migrated));
+  setText('stat-pending-val', formatNumber(photoModel.summary.migrated));
 
-  setText('stat-done-pct',    `${Math.round(completed   / totalItems * 100)}% of total`);
-  setText('stat-working-pct', `${Math.round(inProgress  / totalItems * 100)}% of total`);
-  setText('stat-pending-pct', `${Math.round(pending     / totalItems * 100)}% of total`);
+  setText('stat-total-pct', `${inProgress} in progress · ${pending} pending`);
+  setText('stat-done-pct', `${formatNumber(productModel.summary.active)} active in redix_core`);
+  setText('stat-working-pct', `${formatNumber(remainingAccounts)} remaining to map`);
+  setText('stat-pending-pct', `${formatNumber(photoModel.summary.active)} active in redix_core`);
 
   // Legend
   setText('legend-done',    completed);
@@ -89,62 +178,65 @@ function renderStats(stats) {
 
 // ── Overall progress breakdown ─────────────────
 function renderProgressBreakdown(data) {
-  // Config items: done/working percentages
   const total = data.stats.totalItems;
-  const donePct    = (data.stats.completed  / total * 100).toFixed(1);
-  const workingPct = (data.stats.inProgress / total * 100).toFixed(1);
+  const donePct = total > 0 ? (data.stats.completed / total * 100) : 0;
+  const workingPct = total > 0 ? (data.stats.inProgress / total * 100) : 0;
+  const productModel = getProductsModel(data.products);
+  const photoModel = getPhotosModel(data.photos);
+  const accountSummary = getAccountSummary(data);
 
-  // Products: REC migrated / grand total
-  const prodEntries = Object.values(data.products);
-  const prodTotal   = prodEntries.reduce((s, v) => s + (v ? v.total    : 0), 0);
-  const prodMigrated= prodEntries.reduce((s, v) => s + (v ? v.migrated : 0), 0);
+  const prodTotal = productModel.summary.targetTotal;
+  const prodMigrated = productModel.summary.migrated;
+  const prodPct = prodTotal > 0 ? (prodMigrated / prodTotal * 100) : 0;
 
-  // Photos: all pending
-  const photoTotal = Object.values(data.photos).reduce((s, v) => s + (v ? v.total : 0), 0);
+  const photoTotal = photoModel.summary.targetTotal;
+  const photoMigrated = photoModel.summary.migrated;
+  const photoPct = photoTotal > 0 ? (photoMigrated / photoTotal * 100) : 0;
 
-  // Storage: done vs total
+  const accountPct = accountSummary.total > 0 ? (accountSummary.migrated / accountSummary.total * 100) : 0;
+  const accountRemaining = Math.max(accountSummary.total - accountSummary.migrated, 0);
+
   const storageEntries = Object.values(data.storage);
-  const storageTotal   = storageEntries.reduce((s, v) => s + v.gb, 0);
-  const storageDone    = storageEntries.filter(v => v.status === 'done').reduce((s, v) => s + v.gb, 0);
-  const storagePct     = (storageDone / storageTotal * 100).toFixed(0);
+  const storageTotal = storageEntries.reduce((s, v) => s + v.gb, 0);
+  const storageDone = storageEntries.filter(v => v.status === 'done').reduce((s, v) => s + v.gb, 0);
+  const storagePct = storageTotal > 0 ? (storageDone / storageTotal * 100) : 0;
 
   const rows = [
     {
-      label:    'Config Items',
-      barHTML:  `<div style="width:${donePct}%;height:100%;background:var(--success)"></div>
-                 <div style="width:${workingPct}%;height:100%;background:var(--warning)"></div>`,
-      valueHTML:`<span style="font-size:11px;font-weight:700;color:var(--success)">${donePct}% done</span>`,
+      label: 'Catalog readiness',
+      barHTML: `<div style="width:${donePct.toFixed(1)}%;height:100%;background:var(--success)"></div>
+                <div style="width:${workingPct.toFixed(1)}%;height:100%;background:var(--warning)"></div>`,
+      valueHTML: `<span style="font-size:11px;font-weight:700;color:var(--success)">${data.stats.completed} ready</span>
+                  <span style="font-size:11px;color:var(--text-muted)"> · ${data.stats.inProgress} moving</span>`,
       overflow: true
     },
     {
-      label:    'Products',
-      barHTML:  `<div style="width:${Math.max(prodMigrated / prodTotal * 100, 0.02).toFixed(3)}%;min-width:3px;height:100%;background:var(--warning);border-radius:99px"></div>`,
-      valueHTML:`<span style="font-size:11px;font-weight:700;color:var(--warning)">${formatNumber(prodMigrated)} / ${Math.round(prodTotal/1000)}K</span>`,
+      label: 'Products live in redix_core',
+      barHTML: `<div style="width:${Math.max(prodPct, 0.02).toFixed(3)}%;min-width:3px;height:100%;background:var(--warning);border-radius:99px"></div>`,
+      valueHTML: `<span style="font-size:11px;font-weight:700;color:var(--warning)">${formatNumber(prodMigrated)} live</span>
+                  <span style="font-size:11px;color:var(--text-muted)"> · ${formatNumber(productModel.summary.active)} active</span>`,
       overflow: true
     },
     {
-      label:    'Photos (Records)',
-      barHTML:  '',
-      valueHTML:`<span style="font-size:11px;font-weight:600;color:var(--text-muted)">0 / ${Math.round(photoTotal/1000)}K</span>`,
-      overflow: false
-    },
-    {
-      label:    'Storage',
-      barHTML:  `<div style="width:${storagePct}%;height:100%;background:var(--success);border-radius:99px"></div>`,
-      valueHTML:`<span style="font-size:11px;font-weight:700;color:var(--success)">${storagePct}% <span style="font-weight:400;color:var(--text-muted)">(${formatNumber(storageDone)} GB)</span></span>`,
+      label: 'Photo records live in redix_core',
+      barHTML: `<div style="width:${Math.max(photoPct, 0.02).toFixed(3)}%;min-width:3px;height:100%;background:#0f766e;border-radius:99px"></div>`,
+      valueHTML: `<span style="font-size:11px;font-weight:700;color:#0f766e">${formatNumber(photoMigrated)} live</span>
+                  <span style="font-size:11px;color:var(--text-muted)"> · mixed by source</span>`,
       overflow: true
     },
     {
-      label:    'Clients & Vendors',
-      barHTML:  `<div style="width:2px;height:100%;background:var(--warning);border-radius:99px"></div>`,
-      valueHTML:`<span style="font-size:11px;font-weight:700;color:var(--warning)">In progress</span>`,
+      label: 'Accounts mapped',
+      barHTML: `<div style="width:${Math.max(accountPct, 0.02).toFixed(3)}%;height:100%;background:#7c3aed;border-radius:99px"></div>`,
+      valueHTML: `<span style="font-size:11px;font-weight:700;color:#7c3aed">${formatNumber(accountSummary.migrated)} mapped</span>
+                  <span style="font-size:11px;color:var(--text-muted)"> · ${formatNumber(accountRemaining)} remaining</span>`,
       overflow: true
     },
     {
-      label:    'Contacts',
-      barHTML:  '',
-      valueHTML:`<span style="font-size:11px;font-weight:600;color:var(--text-muted)">Pending</span>`,
-      overflow: false
+      label: 'Storage copied',
+      barHTML: `<div style="width:${storagePct.toFixed(1)}%;height:100%;background:var(--success);border-radius:99px"></div>`,
+      valueHTML: `<span style="font-size:11px;font-weight:700;color:var(--success)">${storagePct.toFixed(0)}%</span>
+                  <span style="font-size:11px;color:var(--text-muted)"> · ${formatNumber(storageDone)} GB done</span>`,
+      overflow: true
     }
   ];
 
@@ -173,8 +265,30 @@ function renderMigrationItems(items) {
 
 // ── Volume: Products ───────────────────────────
 function renderProducts(products) {
-  const entries = Object.entries(products);
-  const grandTotal = entries.reduce((s, [, v]) => s + (v ? v.total : 0), 0);
+  const { summary, byCompany } = getProductsModel(products);
+  const entries = Object.entries(byCompany);
+  const grandTotal = summary.targetTotal;
+  const migratedPct = grandTotal > 0 ? (summary.migrated / grandTotal * 100) : 0;
+
+  const summaryHTML = `
+    <div class="volume-row" style="flex-direction:column;align-items:stretch;gap:6px;padding:10px 12px;border-bottom:1px solid var(--border);background:#f8fafc">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:0.4px">${summary.sourceLabel}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">${summary.note || 'Migrated items are mixed in the new database and cannot yet be split by origin company.'}</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div class="volume-num" style="color:var(--warning)">${formatNumber(summary.migrated)}</div>
+          <div style="font-size:10px;color:var(--text-muted)">${formatNumber(summary.active)} active · ${migratedPct.toFixed(1)}% of target</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="flex:1;height:5px;background:var(--surface);border-radius:99px;overflow:hidden">
+          <div style="width:${Math.max(migratedPct, 0.02).toFixed(3)}%;min-width:3px;height:100%;background:var(--warning);border-radius:99px"></div>
+        </div>
+        <span style="font-size:10px;color:var(--warning);font-weight:600;white-space:nowrap">${formatNumber(summary.migrated)} live</span>
+      </div>
+    </div>`;
 
   let rowsHTML = entries.map(([company, data], i) => {
     const isLast  = i === entries.length - 1;
@@ -192,12 +306,30 @@ function renderProducts(products) {
           </div>
           <div style="display:flex;align-items:center;gap:8px">
             <div style="flex:1;height:5px;background:var(--surface);border-radius:99px"></div>
-            <span style="font-size:10px;color:var(--text-muted);font-weight:500">Not started</span>
+            <span style="font-size:10px;color:var(--text-muted);font-weight:500">Target volume</span>
           </div>
         </div>`;
     }
 
-    const pct = data.total > 0 ? Math.max(data.migrated / data.total * 100, 0.065).toFixed(3) : 0;
+    if (data.status === 'done') {
+      return `
+        <div class="volume-row" style="flex-direction:column;align-items:stretch;gap:5px;padding:8px 12px;${border}">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div class="volume-company">${companyDot(company)}${company}</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span class="badge badge-done" style="font-size:10px;padding:2px 7px">Done</span>
+              <div class="volume-num">${formatNumber(data.total)}</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="flex:1;height:5px;background:var(--surface);border-radius:99px;overflow:hidden">
+              <div style="width:100%;height:100%;background:var(--success);border-radius:99px"></div>
+            </div>
+            <span style="font-size:10px;color:var(--success);font-weight:600;white-space:nowrap">Source completed</span>
+          </div>
+        </div>`;
+    }
+
     return `
       <div class="volume-row" style="flex-direction:column;align-items:stretch;gap:5px;padding:8px 12px;${border}">
         <div style="display:flex;align-items:center;justify-content:space-between">
@@ -209,37 +341,62 @@ function renderProducts(products) {
         </div>
         <div style="display:flex;align-items:center;gap:8px">
           <div style="flex:1;height:5px;background:var(--surface);border-radius:99px;overflow:hidden">
-            <div style="width:${pct}%;min-width:3px;height:100%;background:var(--warning);border-radius:99px"></div>
+            <div style="width:35%;min-width:3px;height:100%;background:var(--warning);border-radius:99px"></div>
           </div>
-          <span style="font-size:10px;color:var(--warning);font-weight:600;white-space:nowrap">${formatNumber(data.migrated)} migrated</span>
+          <span style="font-size:10px;color:var(--warning);font-weight:600;white-space:nowrap">Source loading now</span>
         </div>
       </div>`;
   }).join('');
 
-  setHTML('volume-products-rows', rowsHTML);
+  setHTML('volume-products-rows', summaryHTML + rowsHTML);
   setText('volume-products-total', formatNumber(grandTotal));
 }
 
 // ── Volume: Photos ─────────────────────────────
 function renderPhotos(photos) {
-  const entries = Object.entries(photos);
-  const grandTotal = entries.reduce((s, [, v]) => s + (v ? v.total : 0), 0);
+  const { summary, byCompany } = getPhotosModel(photos);
+  const entries = Object.entries(byCompany);
+  const grandTotal = summary.targetTotal;
+  const migratedPct = grandTotal > 0 ? (summary.migrated / grandTotal * 100) : 0;
+
+  const summaryHTML = `
+    <div class="volume-row" style="flex-direction:column;align-items:stretch;gap:6px;padding:10px 12px;border-bottom:1px solid var(--border);background:#f8fafc">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:0.4px">${summary.sourceLabel}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">${summary.note || 'Photo records are mixed in the new database and cannot yet be split by origin company.'}</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div class="volume-num" style="color:#0f766e">${formatNumber(summary.migrated)}</div>
+          <div style="font-size:10px;color:var(--text-muted)">${formatNumber(summary.active)} active · ${migratedPct.toFixed(1)}% of target</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="flex:1;height:5px;background:var(--surface);border-radius:99px;overflow:hidden">
+          <div style="width:${Math.max(migratedPct, 0.02).toFixed(3)}%;min-width:3px;height:100%;background:#0f766e;border-radius:99px"></div>
+        </div>
+        <span style="font-size:10px;color:#0f766e;font-weight:600;white-space:nowrap">${formatNumber(summary.migrated)} live</span>
+      </div>
+    </div>`;
 
   const rowsHTML = entries.map(([company, data], i) => {
     const isLast = i === entries.length - 1;
     const border = isLast ? 'border-bottom:none' : '';
     const num    = data ? formatNumber(data.total) : '—';
     return `
-      <div class="volume-row" style="${border}">
-        <div class="volume-company">${companyDot(company)}${company}</div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <span class="badge badge-pending" style="font-size:10px;padding:2px 7px">Pending</span>
-          <div class="volume-num">${num}</div>
+      <div class="volume-row" style="flex-direction:column;align-items:stretch;gap:5px;padding:8px 12px;${border}">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="volume-company">${companyDot(company)}${company}</div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="badge badge-pending" style="font-size:10px;padding:2px 7px">Target Only</span>
+            <div class="volume-num">${num}</div>
+          </div>
         </div>
+        <div style="font-size:10px;color:var(--text-muted)">Live photo records are mixed and currently not attributable by company.</div>
       </div>`;
   }).join('');
 
-  setHTML('volume-photos-rows', rowsHTML);
+  setHTML('volume-photos-rows', summaryHTML + rowsHTML);
   setText('volume-photos-total', formatNumber(grandTotal));
 }
 
@@ -311,36 +468,62 @@ function renderCompanyGrid(containerId, entries, renderCell) {
   setHTML(containerId, html);
 }
 
+function renderAccountProgress(containerId, entries, entityLabel) {
+  const html = `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:8px 16px 14px">
+      ${entries.map(([company, data]) => {
+        if (data === null) {
+          return `
+            <div style="border:1px solid var(--border);border-radius:12px;padding:12px;background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);opacity:0.8">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <div class="split-company" style="margin:0">${companyDot(company)}${company}</div>
+                ${renderPending()}
+              </div>
+              <div style="font-size:10px;color:var(--text-muted);margin-top:24px">Legacy total not loaded yet.</div>
+            </div>`;
+        }
+
+        const total = toNumber(data.total);
+        const migrated = toNumber(data.migrated);
+        const active = toNumber(data.active);
+        const remaining = Math.max(total - migrated, 0);
+        const pct = total > 0 ? (migrated / total * 100) : 0;
+        const badge = remaining === 0
+          ? '<span class="badge badge-done" style="font-size:10px;padding:2px 7px">Mapped</span>'
+          : '<span class="badge badge-working" style="font-size:10px;padding:2px 7px">In Progress</span>';
+        const barColor = remaining === 0 ? 'var(--success)' : '#7c3aed';
+
+        return `
+          <div style="border:1px solid var(--border);border-radius:12px;padding:12px;background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <div class="split-company" style="margin:0">${companyDot(company)}${company}</div>
+              ${badge}
+            </div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-top:12px">
+              <div style="font-size:28px;font-weight:800;letter-spacing:-0.04em;color:var(--text-primary)">${formatNumber(migrated)}</div>
+              <div style="font-size:12px;color:var(--text-muted)">/ ${formatNumber(total)}</div>
+            </div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px">${entityLabel} mapped in account_accounting_mapping</div>
+            <div style="margin-top:10px">
+              ${renderProgressBar(pct, barColor)}
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:8px;margin-top:8px;font-size:10px;color:var(--text-muted)">
+              <span>${formatNumber(active)} active in source</span>
+              <span>${formatNumber(remaining)} remaining</span>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>`;
+
+  setHTML(containerId, html);
+}
+
 function renderClients(clients) {
-  renderCompanyGrid('clients-grid', Object.entries(clients), (company, data) => {
-    if (data === null) return `
-      <div class="split-company">${companyDot(company)}${company}</div>
-      <div style="display:inline-flex;margin-top:6px">${renderPending()}</div>
-      <div class="split-sub" style="margin-top:4px">Not available yet</div>`;
-
-    const activeLine = data.active
-      ? `<div class="split-extra">${formatNumber(data.active)} active</div>`
-      : `<div class="split-sub">Total clients</div>`;
-
-    return `
-      <div class="split-company">${companyDot(company)}${company}</div>
-      <div class="split-num">${formatNumber(data.total)}</div>
-      ${activeLine}`;
-  });
+  renderAccountProgress('clients-grid', Object.entries(clients), 'Clients');
 }
 
 function renderVendors(vendors) {
-  renderCompanyGrid('vendors-grid', Object.entries(vendors), (company, data) => {
-    if (data === null) return `
-      <div class="split-company">${companyDot(company)}${company}</div>
-      <div style="display:inline-flex;margin-top:6px">${renderPending()}</div>
-      <div class="split-sub" style="margin-top:4px">Not available yet</div>`;
-
-    return `
-      <div class="split-company">${companyDot(company)}${company}</div>
-      <div class="split-num">${formatNumber(data.total)}</div>
-      <div class="split-extra">${formatNumber(data.active)} active</div>`;
-  });
+  renderAccountProgress('vendors-grid', Object.entries(vendors), 'Vendors');
 }
 
 function renderContacts(contacts) {
@@ -441,18 +624,29 @@ function switchView(view) {
 }
 
 const TeamDashboard = (function() {
-  var allReports = [];
-  var currentReport = null;
-  var currentFilter = 'all';
-  var currentSort = 'load';
+  var boardData = null;
   var cachedStats = null;
+  var currentFilter = 'all';
+  var currentSort = 'workload';
 
-  /* ── helpers ── */
-  function shortName(name) { return name.split(' ').slice(0, 2).join(' '); }
-  function pctColor(p)     { return p >= 80 ? '#16a34a' : p >= 60 ? '#ca8a04' : '#dc2626'; }
-  function pctClass(p)     { return p >= 80 ? 'green' : p >= 60 ? 'yellow' : 'red'; }
+  function getChartWidth(canvas, fallbackWidth) {
+    var parentWidth = canvas && canvas.parentElement ? canvas.parentElement.clientWidth : 0;
+    if (parentWidth && parentWidth > 120) return parentWidth - 40;
+    return fallbackWidth;
+  }
 
-  /** roundRect polyfill for older browsers */
+  function shortName(name) {
+    return (name || 'Unassigned').split(' ').slice(0, 2).join(' ');
+  }
+
+  function pctColor(p) {
+    return p >= 80 ? '#16a34a' : p >= 50 ? '#ca8a04' : '#dc2626';
+  }
+
+  function pctClass(p) {
+    return p >= 80 ? 'green' : p >= 50 ? 'yellow' : 'red';
+  }
+
   function roundedRect(ctx, x, y, w, h, r) {
     if (w <= 0) return;
     r = Math.min(r, h / 2, w / 2);
@@ -470,163 +664,243 @@ const TeamDashboard = (function() {
     ctx.fill();
   }
 
-  /* ── 1. loadData ── */
-  function loadData(reports) {
-    allReports = reports.slice().sort(function(a, b) { return b.date.localeCompare(a.date); });
-    var sel = document.getElementById('team-date-select');
-    if (sel) {
-      sel.innerHTML = allReports.map(function(r) {
-        return '<option value="' + r.date + '">' + r.dateLabel + '</option>';
-      }).join('');
-      sel.onchange = function() { selectDate(this.value); };
-    }
-    if (allReports.length > 0) selectDate(allReports[0].date);
+  function parseDate(dateStr) {
+    if (!dateStr) return null;
+    var dt = new Date(dateStr + 'T00:00:00');
+    return Number.isNaN(dt.getTime()) ? null : dt;
   }
 
-  /* ── 2. selectDate ── */
-  function selectDate(dateStr) {
-    currentReport = allReports.find(function(r) { return r.date === dateStr; });
-    if (!currentReport) return;
-    cachedStats = calcStats(currentReport);
+  function loadData(data) {
+    if (!data || data.source !== 'monday-board') {
+      console.warn('Unexpected Team Performance data shape:', data);
+      return;
+    }
+    boardData = data;
+    cachedStats = calcStats(data);
     renderAll();
   }
 
-  /* ── 3. calcStats ── */
-  function calcStats(report) {
-    var perPerson = {};
-    var totalTasks = 0, totalDone = 0, totalPending = 0, totalImprevista = 0, totalColab = 0;
+  function calcStats(data) {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    report.members.forEach(function(m) {
-      var s = { total: m.tasks.length, done: 0, pending: 0, imprevista: 0, colaborativa: 0, tasks: m.tasks };
-      m.tasks.forEach(function(t) {
-        if (t.status === 'done') s.done++; else s.pending++;
-        if (t.imprevista) s.imprevista++;
-        if (t.colaborativa) s.colaborativa++;
+    var items = (data.items || []).map(function(item) {
+      var due = parseDate(item.dueDate);
+      var timelineEnd = parseDate(item.timelineEnd);
+      var effectiveDue = due || timelineEnd;
+      return Object.assign({}, item, {
+        effectiveDue: effectiveDue ? effectiveDue.toISOString().slice(0, 10) : null,
+        isOverdue: !!(effectiveDue && effectiveDue < today && !item.isDone),
+        isBlocked: item.isLate || item.isOnHold || !!(effectiveDue && effectiveDue < today && !item.isDone)
       });
-      s.compliance = s.total ? Math.round(s.done / s.total * 100) : 0;
-      perPerson[m.name] = s;
-      totalTasks += s.total;
-      totalDone += s.done;
-      totalPending += s.pending;
-      totalImprevista += s.imprevista;
-      totalColab += s.colaborativa;
     });
 
-    var entries = Object.entries(perPerson);
-    var maxLoad = entries.slice().sort(function(a, b) { return b[1].total - a[1].total; })[0];
-    var maxPending = entries.slice().sort(function(a, b) { return b[1].pending - a[1].pending; })[0];
-    var bestCompliance = entries.filter(function(e) { return e[1].total > 1; })
-      .sort(function(a, b) { return b[1].compliance - a[1].compliance; })[0] || entries[0];
-    var stars = entries.filter(function(e) { return e[1].compliance === 100 && e[1].total > 1; })
-      .map(function(e) { return e[0]; });
+    var ownerMap = {};
+    var groupMap = {};
+    var statusCounts = { done: 0, working: 0, todo: 0, late: 0, onHold: 0 };
+
+    items.forEach(function(item) {
+      if (item.isDone) statusCounts.done++;
+      else if (item.isWorking) statusCounts.working++;
+      else if (item.isLate) statusCounts.late++;
+      else if (item.isOnHold) statusCounts.onHold++;
+      else statusCounts.todo++;
+
+      if (!groupMap[item.group]) {
+        groupMap[item.group] = {
+          name: item.group,
+          total: 0,
+          done: 0,
+          open: 0,
+          working: 0,
+          late: 0,
+          onHold: 0,
+          todo: 0,
+          progress: 0
+        };
+      }
+      var g = groupMap[item.group];
+      g.total++;
+      if (item.isDone) g.done++; else g.open++;
+      if (item.isWorking) g.working++;
+      if (item.isLate || item.isOverdue) g.late++;
+      if (item.isOnHold) g.onHold++;
+      if (item.isTodo) g.todo++;
+      g.progress = g.total ? Math.round(g.done / g.total * 100) : 0;
+
+      var owners = item.owners && item.owners.length ? item.owners : ['Unassigned'];
+      owners.forEach(function(owner) {
+        if (!ownerMap[owner]) {
+          ownerMap[owner] = {
+            name: owner,
+            total: 0,
+            done: 0,
+            working: 0,
+            todo: 0,
+            late: 0,
+            onHold: 0,
+            overdue: 0,
+            blocked: 0,
+            collaborative: 0,
+            progress: 0,
+            open: 0,
+            items: []
+          };
+        }
+        var s = ownerMap[owner];
+        s.total++;
+        if (item.isDone) s.done++;
+        if (item.isWorking) s.working++;
+        if (item.isTodo) s.todo++;
+        if (item.isLate) s.late++;
+        if (item.isOnHold) s.onHold++;
+        if (item.isOverdue) s.overdue++;
+        if (item.isBlocked) s.blocked++;
+        if (item.hasMultipleOwners) s.collaborative++;
+        s.items.push(item);
+        s.open = s.total - s.done;
+        s.progress = s.total ? Math.round(s.done / s.total * 100) : 0;
+      });
+    });
+
+    var ownerEntries = Object.entries(ownerMap);
+    ownerEntries.forEach(function(entry) {
+      entry[1].items.sort(function(a, b) {
+        if (a.isDone !== b.isDone) return a.isDone ? 1 : -1;
+        if (a.isBlocked !== b.isBlocked) return a.isBlocked ? -1 : 1;
+        return (a.effectiveDue || '').localeCompare(b.effectiveDue || '');
+      });
+    });
+
+    var groupEntries = Object.values(groupMap).sort(function(a, b) { return b.total - a.total; });
+    var overdueItems = items.filter(function(item) { return item.isOverdue; })
+      .sort(function(a, b) { return (a.effectiveDue || '').localeCompare(b.effectiveDue || ''); });
+    var dueSoonItems = items.filter(function(item) {
+      if (!item.effectiveDue || item.isDone) return false;
+      var dueDate = parseDate(item.effectiveDue);
+      if (!dueDate) return false;
+      var diffDays = Math.round((dueDate - today) / 86400000);
+      return diffDays >= 0 && diffDays <= 3;
+    }).sort(function(a, b) { return (a.effectiveDue || '').localeCompare(b.effectiveDue || ''); });
+
+    var maxLoad = ownerEntries.slice().sort(function(a, b) { return b[1].open - a[1].open; })[0] || ['—', { open: 0 }];
+    var mostBlocked = ownerEntries.slice().sort(function(a, b) { return b[1].blocked - a[1].blocked; })[0] || ['—', { blocked: 0 }];
+    var bestProgress = ownerEntries.slice().filter(function(e) { return e[1].total > 0; })
+      .sort(function(a, b) { return b[1].progress - a[1].progress; })[0] || ['—', { progress: 0 }];
 
     return {
-      perPerson: perPerson,
-      totalTasks: totalTasks,
-      totalDone: totalDone,
-      totalPending: totalPending,
-      totalImprevista: totalImprevista,
-      totalColab: totalColab,
-      compliance: totalTasks ? Math.round(totalDone / totalTasks * 100) : 0,
-      numPersons: report.members.length,
-      avgTasks: (totalTasks / report.members.length).toFixed(1),
+      board: data.board,
+      syncedAt: data.syncedAt,
+      items: items,
+      ownerEntries: ownerEntries,
+      groupEntries: groupEntries,
+      totalItems: items.length,
+      done: statusCounts.done,
+      working: statusCounts.working,
+      todo: statusCounts.todo,
+      late: statusCounts.late,
+      onHold: statusCounts.onHold,
+      blocked: statusCounts.late + statusCounts.onHold + overdueItems.length,
+      open: items.length - statusCounts.done,
+      progress: items.length ? Math.round(statusCounts.done / items.length * 100) : 0,
+      activeOwners: ownerEntries.length,
+      moduleCount: groupEntries.length,
       maxLoad: maxLoad,
-      maxPending: maxPending,
-      bestCompliance: bestCompliance,
-      stars: stars
+      mostBlocked: mostBlocked,
+      bestProgress: bestProgress,
+      overdueItems: overdueItems,
+      dueSoonItems: dueSoonItems
     };
   }
 
-  /* ── render all ── */
   function renderAll() {
     if (!cachedStats) return;
+    var syncLabel = new Date(cachedStats.syncedAt).toLocaleString('es-CO', {
+      dateStyle: 'medium',
+      timeStyle: 'short'
+    });
+    var sel = document.getElementById('team-date-select');
+    if (sel) sel.innerHTML = '<option>' + cachedStats.board.name + ' · Sync ' + syncLabel + '</option>';
     renderKPIs(cachedStats);
     renderPersons(cachedStats, currentSort);
     renderCharts(cachedStats);
-    renderCollab(currentReport);
-    renderNextDay(currentReport);
+    renderModules(cachedStats);
+    renderFocus(cachedStats);
     renderExecutiveSummary(cachedStats);
     renderFindings(cachedStats);
     renderRecommendations(cachedStats);
     renderPMComment(cachedStats);
-    renderTrend(allReports);
-    var now = new Date().toLocaleString('es-CO', { dateStyle: 'full', timeStyle: 'medium' });
-    setText('team-gen-time', now);
-    setText('team-footer-ts', 'Dashboard generado el ' + now);
+    var trend = document.getElementById('team-trend-section');
+    if (trend) trend.style.display = 'none';
+    setText('team-footer-date', syncLabel);
     filterTasks(currentFilter);
   }
 
-  /* ── 4. renderKPIs ── */
   function renderKPIs(st) {
-    var compCls = pctClass(st.compliance);
     var kpis = [
-      { label: 'Total Tareas',        value: st.totalTasks,                    sub: 'asignaciones del d\u00eda',                         cls: '' },
-      { label: 'Completadas',         value: st.totalDone,                     sub: 'de ' + st.totalTasks + ' tareas',                   cls: 'green' },
-      { label: 'Pendientes',          value: st.totalPending,                  sub: Math.round(st.totalPending/st.totalTasks*100)+'% del total', cls: st.totalPending > 5 ? 'red' : 'yellow' },
-      { label: '% Cumplimiento',      value: st.compliance + '%',              sub: 'del equipo',                                        cls: compCls },
-      { label: 'Personas',            value: st.numPersons,                    sub: 'Promedio: ' + st.avgTasks + ' tareas/persona',       cls: '' },
-      { label: 'Mayor Carga',         value: shortName(st.maxLoad[0]),         sub: st.maxLoad[1].total + ' tareas asignadas',            cls: 'red' },
-      { label: 'M\u00e1s Pendientes', value: shortName(st.maxPending[0]),      sub: st.maxPending[1].pending + ' pendientes',             cls: st.maxPending[1].pending > 2 ? 'red' : 'yellow' },
-      { label: 'Mejor Cumplimiento',  value: shortName(st.bestCompliance[0]),  sub: st.bestCompliance[1].compliance + '% (' + st.bestCompliance[1].total + ' tareas)', cls: 'green' },
-      { label: 'Imprevistas',         value: st.totalImprevista,               sub: Math.round(st.totalImprevista/st.totalTasks*100)+'% del total', cls: 'yellow' },
-      { label: 'Colaborativas',       value: st.totalColab,                    sub: Math.round(st.totalColab/st.totalTasks*100)+'% del total',      cls: '' }
+      { label: 'Board Items', value: formatNumber(st.totalItems), sub: st.board.name, cls: '' },
+      { label: 'Done', value: formatNumber(st.done), sub: st.progress + '% completed', cls: 'green' },
+      { label: 'Working', value: formatNumber(st.working), sub: formatNumber(st.open) + ' still open', cls: 'yellow' },
+      { label: 'Blocked', value: formatNumber(st.late + st.onHold), sub: formatNumber(st.overdueItems.length) + ' overdue by date', cls: 'red' },
+      { label: 'To Do', value: formatNumber(st.todo), sub: 'not started yet', cls: '' },
+      { label: 'Owners', value: formatNumber(st.activeOwners), sub: 'people with assignments', cls: '' },
+      { label: 'Top Workload', value: shortName(st.maxLoad[0]), sub: formatNumber(st.maxLoad[1].open) + ' open items', cls: st.maxLoad[1].open > 6 ? 'red' : 'yellow' },
+      { label: 'Best Progress', value: shortName(st.bestProgress[0]), sub: st.bestProgress[1].progress + '% done', cls: 'green' },
+      { label: 'Modules', value: formatNumber(st.moduleCount), sub: st.groupEntries[0] ? 'largest: ' + st.groupEntries[0].name : 'no groups', cls: '' },
+      { label: 'Most Blocked', value: shortName(st.mostBlocked[0]), sub: formatNumber(st.mostBlocked[1].blocked) + ' blocked / overdue', cls: st.mostBlocked[1].blocked ? 'red' : '' }
     ];
     setHTML('team-kpi-grid', kpis.map(function(k) {
-      return '<div class="tm-kpi' + (k.cls ? ' tm-kpi-' + k.cls : '') + '">' +
+      return '<div class="tm-kpi' + (k.cls ? ' ' + k.cls : '') + '">' +
         '<div class="tm-kpi-label">' + k.label + '</div>' +
         '<div class="tm-kpi-value">' + k.value + '</div>' +
         '<div class="tm-kpi-sub">' + k.sub + '</div></div>';
     }).join(''));
   }
 
-  /* ── 5. renderPersons ── */
   function renderPersons(st, sortBy) {
     currentSort = sortBy || currentSort;
-    var entries = Object.entries(st.perPerson);
-    if (currentSort === 'load')       entries.sort(function(a,b){ return b[1].total - a[1].total; });
-    if (currentSort === 'compliance') entries.sort(function(a,b){ return b[1].compliance - a[1].compliance; });
-    if (currentSort === 'pending')    entries.sort(function(a,b){ return b[1].pending - a[1].pending; });
+    var entries = st.ownerEntries.slice();
+    if (currentSort === 'workload') entries.sort(function(a, b) { return b[1].open - a[1].open; });
+    if (currentSort === 'progress') entries.sort(function(a, b) { return b[1].progress - a[1].progress; });
+    if (currentSort === 'blocked') entries.sort(function(a, b) { return b[1].blocked - a[1].blocked; });
 
     var html = entries.map(function(pair) {
-      var name = pair[0], s = pair[1];
-      var cColor = pctClass(s.compliance);
-      var isOverload = s.total >= 6;
-      var isStar = s.compliance === 100 && s.total > 1;
-      var highlight = isOverload ? ' tm-highlight-overload' : (isStar ? ' tm-highlight-star' : '');
-
+      var name = pair[0];
+      var s = pair[1];
+      var highlight = s.blocked > 0 ? ' tm-highlight-overload' : (s.progress === 100 ? ' tm-highlight-star' : '');
       var tags = '';
-      if (isOverload) tags += '<span class="tm-badge tm-badge-red">Sobrecarga</span> ';
-      if (isStar)     tags += '<span class="tm-badge tm-badge-green">Alto rendimiento</span> ';
-      if (s.imprevista > 0) tags += '<span class="tm-badge tm-badge-blue">' + s.imprevista + ' imprevista' + (s.imprevista > 1 ? 's' : '') + '</span>';
+      if (s.blocked > 0) tags += '<span class="tm-badge tm-badge-red">' + formatNumber(s.blocked) + ' blocked</span> ';
+      if (s.collaborative > 0) tags += '<span class="tm-badge tm-badge-blue">' + formatNumber(s.collaborative) + ' multi-owner</span> ';
+      if (s.progress === 100) tags += '<span class="tm-badge tm-badge-green">100% done</span> ';
 
-      var taskRows = s.tasks.map(function(t) {
-        var icon = t.status === 'done'
-          ? '<div class="tm-task-icon tm-task-done">\u2713</div>'
-          : '<div class="tm-task-icon tm-task-pending">\u23f3</div>';
-        var tTags = '';
-        if (t.imprevista)        tTags += '<span class="tm-tag tm-tag-imprevista">Imprevista</span>';
-        if (t.colaborativa)      tTags += '<span class="tm-tag tm-tag-colaborativa">Colaborativa</span>';
-        if (t.status==='pending') tTags += '<span class="tm-tag tm-tag-pendiente">Pendiente</span>';
-        return '<li class="tm-task-item" data-status="' + t.status + '" data-imprevista="' + t.imprevista + '" data-colaborativa="' + t.colaborativa + '">' +
-          icon + '<span>' + t.desc + '</span><div class="tm-task-tags">' + tTags + '</div></li>';
+      var taskRows = s.items.map(function(item) {
+        var icon = item.isDone ? '✓' : (item.isBlocked ? '!' : '•');
+        var statusCls = item.isDone ? 'tm-task-done' : 'tm-task-pending';
+        var tagsHtml = '<span class="tm-tag tm-tag-pendiente">' + item.status + '</span>';
+        if (item.group) tagsHtml += '<span class="tm-tag tm-tag-colaborativa">' + item.group + '</span>';
+        if (item.effectiveDue) tagsHtml += '<span class="tm-tag tm-tag-imprevista">Due ' + item.effectiveDue + '</span>';
+        return '<li class="tm-task-item" data-status="' + item.status + '" data-overdue="' + (item.isOverdue ? 'true' : 'false') + '">' +
+          '<div class="tm-task-icon ' + statusCls + '">' + icon + '</div>' +
+          '<span>' + item.name + '</span>' +
+          '<div class="tm-task-tags">' + tagsHtml + '</div></li>';
       }).join('');
 
       return '<div class="tm-card' + highlight + ' tm-person-card" data-name="' + name.toLowerCase() + '">' +
         '<div class="tm-card-header" onclick="TeamDashboard.toggleCard(this)">' +
-          '<h3><span class="tm-arrow">\u25b6</span> ' + name + ' ' + tags + '</h3>' +
+          '<h3><span class="tm-arrow">▶</span> ' + name + ' ' + tags + '</h3>' +
           '<div class="tm-meta">' +
-            '<span class="tm-badge tm-badge-' + cColor + '">' + s.compliance + '%</span>' +
-            '<div class="tm-progress-bar"><div class="tm-progress-fill" style="width:' + s.compliance + '%;background:' + pctColor(s.compliance) + '"></div></div>' +
+            '<span class="tm-badge tm-badge-' + pctClass(s.progress) + '">' + s.progress + '%</span>' +
+            '<div class="tm-progress-bar"><div class="tm-progress-fill" style="width:' + s.progress + '%;background:' + pctColor(s.progress) + '"></div></div>' +
             '<span style="font-size:12px;color:#64748b">' + s.done + '/' + s.total + '</span>' +
           '</div>' +
         '</div>' +
         '<div class="tm-card-body">' +
           '<div class="tm-stats-row">' +
             '<span><strong>' + s.total + '</strong> total</span>' +
-            '<span style="color:#16a34a"><strong>' + s.done + '</strong> completadas</span>' +
-            '<span style="color:#ca8a04"><strong>' + s.pending + '</strong> pendientes</span>' +
-            '<span style="color:#a21caf"><strong>' + s.imprevista + '</strong> imprevistas</span>' +
-            '<span style="color:#0369a1"><strong>' + s.colaborativa + '</strong> colaborativas</span>' +
+            '<span style="color:#16a34a"><strong>' + s.done + '</strong> done</span>' +
+            '<span style="color:#ca8a04"><strong>' + s.working + '</strong> working</span>' +
+            '<span style="color:#dc2626"><strong>' + s.blocked + '</strong> blocked</span>' +
+            '<span style="color:#475569"><strong>' + s.todo + '</strong> to do</span>' +
           '</div>' +
           '<ul class="tm-task-list">' + taskRows + '</ul>' +
         '</div></div>';
@@ -635,358 +909,245 @@ const TeamDashboard = (function() {
     setHTML('team-persons-container', html);
   }
 
-  /* ── 6. renderCharts ── */
-  function renderCharts(st) {
-    drawBarChart(st);
-    drawPieChart(st);
-    drawLoadChart(st);
-    drawComplianceChart(st);
-  }
-
-  function drawBarChart(st) {
+  function drawOwnerStatusChart(st) {
     var canvas = document.getElementById('chartTeamBar');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var entries = Object.entries(st.perPerson).sort(function(a,b){ return b[1].total-a[1].total; });
-    var n = entries.length;
-    var W = canvas.width  = canvas.parentElement.clientWidth - 40;
-    var H = canvas.height = Math.max(250, n * 42 + 60);
-    var mL = 130, mR = 40, mT = 10, mB = 30;
-    var cW = W - mL - mR, cH = H - mT - mB;
-    var maxVal = Math.max.apply(null, entries.map(function(e){ return e[1].total; }));
-    var barH = Math.min(28, cH / n - 6);
+    var entries = st.ownerEntries.slice().sort(function(a, b) { return b[1].total - a[1].total; }).slice(0, 8);
+    var W = canvas.width = getChartWidth(canvas, 720);
+    var H = canvas.height = Math.max(240, entries.length * 34 + 50);
+    var mL = 130, mR = 40, mT = 10;
+    var cW = W - mL - mR;
+    var maxVal = Math.max.apply(null, entries.map(function(e) { return e[1].total; }).concat([1]));
     ctx.clearRect(0, 0, W, H);
-    ctx.textBaseline = 'middle';
-
     entries.forEach(function(pair, i) {
-      var name = pair[0], s = pair[1];
-      var y = mT + i * (cH / n) + cH / n / 2;
-      var wD = Math.max((s.done / maxVal) * cW, 0);
-      var wP = Math.max((s.pending / maxVal) * cW, 0);
-      ctx.textAlign = 'right'; ctx.fillStyle = '#334155'; ctx.font = '12px Inter, sans-serif';
-      ctx.fillText(shortName(name), mL - 10, y);
-      ctx.fillStyle = '#16a34a'; roundedRect(ctx, mL, y - barH/2, wD, barH/2 - 1, 3);
-      ctx.fillStyle = '#f59e0b'; roundedRect(ctx, mL, y + 1, wP, barH/2 - 1, 3);
-      ctx.textAlign = 'left'; ctx.fillStyle = '#334155'; ctx.font = '11px Inter, sans-serif';
-      if (s.done > 0)    ctx.fillText(s.done,    mL + wD + 4, y - barH/4);
-      if (s.pending > 0) ctx.fillText(s.pending, mL + wP + 4, y + barH/4);
+      var s = pair[1];
+      var y = mT + i * 30 + 18;
+      var doneW = (s.done / maxVal) * cW;
+      var openW = (s.open / maxVal) * cW;
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#334155';
+      ctx.font = '12px Inter, sans-serif';
+      ctx.fillText(shortName(pair[0]), mL - 10, y);
+      ctx.fillStyle = '#16a34a';
+      roundedRect(ctx, mL, y - 9, doneW, 8, 3);
+      ctx.fillStyle = '#f59e0b';
+      roundedRect(ctx, mL, y + 2, openW, 8, 3);
     });
-    // legend
-    ctx.font = '11px Inter, sans-serif'; ctx.textAlign = 'left';
-    ctx.fillStyle = '#16a34a'; roundedRect(ctx, mL, H-18, 12, 12, 2);
-    ctx.fillStyle = '#334155'; ctx.fillText('Completadas', mL+16, H-12);
-    ctx.fillStyle = '#f59e0b'; roundedRect(ctx, mL+100, H-18, 12, 12, 2);
-    ctx.fillStyle = '#334155'; ctx.fillText('Pendientes', mL+116, H-12);
   }
 
-  function drawPieChart(st) {
+  function drawGroupPieChart(st) {
     var canvas = document.getElementById('chartTeamPie');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var W = canvas.width  = canvas.parentElement.clientWidth - 40;
+    var entries = st.groupEntries.slice(0, 8);
+    var W = canvas.width = getChartWidth(canvas, 720);
     var H = canvas.height = 280;
-    var cx = W/2 - 60, cy = H/2, r = Math.min(100, H/2 - 20);
+    var cx = W / 2 - 60;
+    var cy = H / 2;
+    var r = Math.min(92, H / 2 - 20);
     ctx.clearRect(0, 0, W, H);
-    var entries = Object.entries(st.perPerson).sort(function(a,b){ return b[1].total-a[1].total; });
-    var startAngle = -Math.PI / 2;
-    entries.forEach(function(pair, i) {
-      var slice = (pair[1].total / st.totalTasks) * 2 * Math.PI;
-      ctx.beginPath(); ctx.moveTo(cx, cy);
-      ctx.arc(cx, cy, r, startAngle, startAngle + slice);
-      ctx.fillStyle = TEAM_COLORS[i % TEAM_COLORS.length]; ctx.fill();
-      ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-      startAngle += slice;
+    var total = entries.reduce(function(sum, entry) { return sum + entry.total; }, 0) || 1;
+    var angle = -Math.PI / 2;
+    entries.forEach(function(entry, idx) {
+      var slice = entry.total / total * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, r, angle, angle + slice);
+      ctx.fillStyle = TEAM_COLORS[idx % TEAM_COLORS.length];
+      ctx.fill();
+      angle += slice;
     });
-    // donut hole
-    ctx.beginPath(); ctx.arc(cx, cy, r*0.5, 0, 2*Math.PI); ctx.fillStyle = '#fff'; ctx.fill();
-    ctx.font = 'bold 16px Space Grotesk, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillStyle = '#1e293b'; ctx.fillText(st.totalTasks, cx, cy - 8);
-    ctx.font = '11px Inter, sans-serif'; ctx.fillStyle = '#64748b'; ctx.fillText('tareas', cx, cy + 10);
-    // legend
-    ctx.textAlign = 'left'; ctx.font = '11px Inter, sans-serif';
-    var ly = 20;
-    entries.forEach(function(pair, i) {
-      ctx.fillStyle = TEAM_COLORS[i % TEAM_COLORS.length]; roundedRect(ctx, W-155, ly, 10, 10, 2);
-      ctx.fillStyle = '#334155'; ctx.fillText(shortName(pair[0])+' ('+pair[1].total+')', W-140, ly+9);
-      ly += 18;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * 0.55, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 16px Space Grotesk, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(formatNumber(st.totalItems), cx, cy - 6);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('items', cx, cy + 12);
+    ctx.textAlign = 'left';
+    ctx.font = '11px Inter, sans-serif';
+    entries.forEach(function(entry, idx) {
+      var y = 20 + idx * 18;
+      ctx.fillStyle = TEAM_COLORS[idx % TEAM_COLORS.length];
+      roundedRect(ctx, W - 165, y, 10, 10, 2);
+      ctx.fillStyle = '#334155';
+      ctx.fillText(shortName(entry.name) + ' (' + entry.total + ')', W - 150, y + 9);
     });
   }
 
-  function drawLoadChart(st) {
+  function drawOpenLoadChart(st) {
     var canvas = document.getElementById('chartTeamLoad');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var entries = Object.entries(st.perPerson).sort(function(a,b){ return b[1].total-a[1].total; });
-    var n = entries.length;
-    var W = canvas.width  = canvas.parentElement.clientWidth - 40;
-    var H = canvas.height = Math.max(250, n*36+40);
-    var mL = 130, mR = 60, mT = 10, mB = 20;
+    var entries = st.ownerEntries.slice().sort(function(a, b) { return b[1].open - a[1].open; }).slice(0, 8);
+    var W = canvas.width = getChartWidth(canvas, 720);
+    var H = canvas.height = Math.max(240, entries.length * 34 + 40);
+    var mL = 130, mR = 50, mT = 10;
     var cW = W - mL - mR;
-    var maxVal = Math.max.apply(null, entries.map(function(e){ return e[1].total; }));
-    var barH = Math.min(24, (H-mT-mB)/n - 8);
+    var maxVal = Math.max.apply(null, entries.map(function(e) { return e[1].open; }).concat([1]));
     ctx.clearRect(0, 0, W, H);
     entries.forEach(function(pair, i) {
-      var name = pair[0], s = pair[1];
-      var y = mT + i * ((H-mT-mB)/n) + (H-mT-mB)/n/2;
-      var w = (s.total / maxVal) * cW;
-      var isOver = s.total >= 6;
-      ctx.textAlign = 'right'; ctx.fillStyle = '#334155'; ctx.font = '12px Inter, sans-serif';
-      ctx.fillText(shortName(name), mL-10, y);
-      var grad = ctx.createLinearGradient(mL, 0, mL+w, 0);
-      if (isOver) { grad.addColorStop(0,'#f87171'); grad.addColorStop(1,'#dc2626'); }
-      else        { grad.addColorStop(0,'#60a5fa'); grad.addColorStop(1,'#2563eb'); }
-      ctx.fillStyle = grad;
-      roundedRect(ctx, mL, y-barH/2, w, barH, 4);
-      ctx.textAlign = 'left'; ctx.fillStyle = isOver ? '#dc2626' : '#334155';
-      ctx.font = 'bold 12px Space Grotesk, sans-serif';
-      ctx.fillText(s.total + (isOver ? ' \u26a0\ufe0f' : ''), mL+w+8, y);
+      var s = pair[1];
+      var y = mT + i * 30 + 18;
+      var w = (s.open / maxVal) * cW;
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#334155';
+      ctx.font = '12px Inter, sans-serif';
+      ctx.fillText(shortName(pair[0]), mL - 10, y);
+      ctx.fillStyle = s.blocked > 0 ? '#dc2626' : '#2563eb';
+      roundedRect(ctx, mL, y - 8, w, 16, 4);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#334155';
+      ctx.fillText(String(s.open), mL + w + 8, y + 1);
     });
   }
 
-  function drawComplianceChart(st) {
+  function drawGroupProgressChart(st) {
     var canvas = document.getElementById('chartTeamCompliance');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var entries = Object.entries(st.perPerson).sort(function(a,b){ return b[1].compliance-a[1].compliance; });
-    var n = entries.length;
-    var W = canvas.width  = canvas.parentElement.clientWidth - 40;
-    var H = canvas.height = Math.max(250, n*36+40);
-    var mL = 130, mR = 60, mT = 10, mB = 20;
+    var entries = st.groupEntries.slice().sort(function(a, b) { return b.progress - a.progress; }).slice(0, 8);
+    var W = canvas.width = getChartWidth(canvas, 720);
+    var H = canvas.height = Math.max(240, entries.length * 34 + 40);
+    var mL = 130, mR = 50, mT = 10;
     var cW = W - mL - mR;
-    var barH = Math.min(24, (H-mT-mB)/n - 8);
     ctx.clearRect(0, 0, W, H);
-    entries.forEach(function(pair, i) {
-      var name = pair[0], s = pair[1];
-      var y = mT + i * ((H-mT-mB)/n) + (H-mT-mB)/n/2;
-      var w = (s.compliance / 100) * cW;
-      var color = pctColor(s.compliance);
-      ctx.textAlign = 'right'; ctx.fillStyle = '#334155'; ctx.font = '12px Inter, sans-serif';
-      ctx.fillText(shortName(name), mL-10, y);
-      ctx.fillStyle = color;
-      roundedRect(ctx, mL, y-barH/2, w, barH, 4);
-      ctx.textAlign = 'left'; ctx.fillStyle = color;
-      ctx.font = 'bold 12px Space Grotesk, sans-serif';
-      ctx.fillText(s.compliance + '%', mL+w+8, y);
+    entries.forEach(function(entry, i) {
+      var y = mT + i * 30 + 18;
+      var w = (entry.progress / 100) * cW;
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#334155';
+      ctx.font = '12px Inter, sans-serif';
+      ctx.fillText(shortName(entry.name), mL - 10, y);
+      ctx.fillStyle = pctColor(entry.progress);
+      roundedRect(ctx, mL, y - 8, w, 16, 4);
+      ctx.textAlign = 'left';
+      ctx.fillText(entry.progress + '%', mL + w + 8, y + 1);
     });
   }
 
-  /* ── 7. renderCollab ── */
-  function renderCollab(report) {
-    var collabTasks = [];
-    var seen = {};
-    report.members.forEach(function(m) {
-      m.tasks.filter(function(t){ return t.colaborativa; }).forEach(function(t) {
-        if (!seen[t.desc]) {
-          seen[t.desc] = true;
-          collabTasks.push({ desc: t.desc, participants: [m.name].concat(t.collabWith||[]), status: t.status, imprevista: t.imprevista });
-        }
-      });
-    });
-    if (!collabTasks.length) {
-      setHTML('team-collab-container','<p style="color:#64748b;font-size:13px;padding:12px">No se registraron tareas colaborativas este d\u00eda.</p>');
-      return;
-    }
-    var rows = collabTasks.map(function(t) {
-      var icon = t.status==='done' ? '<div class="tm-task-icon tm-task-done">\u2713</div>' : '<div class="tm-task-icon tm-task-pending">\u23f3</div>';
-      return '<li style="padding:10px 0;border-bottom:1px solid #e2e8f0;display:flex;align-items:flex-start;gap:8px">'+icon+
-        '<div><strong style="font-size:13px">'+t.desc+'</strong><br><span style="font-size:12px;color:#64748b">'+t.participants.join(', ')+'</span></div>'+
-        '<div style="margin-left:auto;flex-shrink:0">'+(t.imprevista?'<span class="tm-tag tm-tag-imprevista">Imprevista</span>':'')+'</div></li>';
-    }).join('');
-    setHTML('team-collab-container',
-      '<div class="tm-card" style="border-left:4px solid #0369a1"><div style="padding:16px 20px"><ul style="list-style:none;padding:0;margin:0">'+rows+'</ul></div></div>');
+  function renderCharts(st) {
+    drawOwnerStatusChart(st);
+    drawGroupPieChart(st);
+    drawOpenLoadChart(st);
+    drawGroupProgressChart(st);
   }
 
-  /* ── 8. renderNextDay ── */
-  function renderNextDay(report) {
-    var el = document.getElementById('team-nextday-container');
-    if (!el) return;
-    if (!report.nextDay || !report.nextDay.length) {
-      el.innerHTML = '<p style="color:#64748b;font-size:13px;padding:12px">No hay pendientes arrastrados.</p>';
-      return;
-    }
-    var rows = report.nextDay.map(function(p) {
-      return '<li style="padding:7px 0;font-size:13px;border-bottom:1px solid #e2e8f0;display:flex;gap:8px">' +
-        '<span style="color:#ca8a04">\u23f3</span><div><strong>'+p.person+':</strong> '+p.task+
-        (p.fromToday ? ' <span class="tm-badge tm-badge-yellow" style="font-size:10px">Arrastrada</span>' : '')+'</div></li>';
+  function renderModules(st) {
+    var modules = st.groupEntries.map(function(group) {
+      return '<div class="tm-card" style="padding:14px 16px">' +
+        '<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">' +
+          '<div><div style="font-size:13px;font-weight:700;color:#0f172a">' + group.name + '</div>' +
+          '<div style="font-size:11px;color:#64748b;margin-top:2px">' + formatNumber(group.done) + ' done · ' + formatNumber(group.open) + ' open</div></div>' +
+          '<span class="tm-badge tm-badge-' + pctClass(group.progress) + '">' + group.progress + '%</span>' +
+        '</div>' +
+        '<div class="tm-progress-bar" style="margin-top:10px"><div class="tm-progress-fill" style="width:' + group.progress + '%;background:' + pctColor(group.progress) + '"></div></div>' +
+      '</div>';
     }).join('');
-    el.innerHTML = '<div class="tm-card"><div style="padding:16px 20px"><ul style="list-style:none;padding:0;margin:0">'+rows+'</ul></div></div>';
+    setHTML('team-collab-container', '<h3>Module Progress</h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">' + modules + '</div>');
   }
 
-  /* ── 9. renderExecutiveSummary ── */
+  function renderFocus(st) {
+    var urgent = st.overdueItems.concat(st.dueSoonItems.filter(function(item) {
+      return !st.overdueItems.find(function(overdue) { return overdue.id === item.id; });
+    })).slice(0, 12);
+    if (!urgent.length) {
+      setHTML('team-nextday-container', '<h3>Due Soon / Overdue</h3><div class="tm-card" style="padding:16px;color:#64748b">No overdue or due-soon items on the board.</div>');
+      return;
+    }
+    var rows = urgent.map(function(item) {
+      var owners = item.owners && item.owners.length ? item.owners.join(', ') : 'Unassigned';
+      var badge = item.isOverdue ? '<span class="tm-badge tm-badge-red">Overdue</span>' : '<span class="tm-badge tm-badge-yellow">Due Soon</span>';
+      return '<li style="padding:10px 0;border-bottom:1px solid #e2e8f0;display:flex;gap:10px;align-items:flex-start">' +
+        '<span style="color:' + (item.isOverdue ? '#dc2626' : '#ca8a04') + '">●</span>' +
+        '<div style="flex:1"><strong style="font-size:13px">' + item.name + '</strong><br><span style="font-size:12px;color:#64748b">' + item.group + ' · ' + owners + ' · ' + (item.effectiveDue || 'No due date') + '</span></div>' +
+        badge + '</li>';
+    }).join('');
+    setHTML('team-nextday-container', '<h3>Due Soon / Overdue</h3><div class="tm-card"><div style="padding:14px 18px"><ul style="list-style:none;margin:0;padding:0">' + rows + '</ul></div></div>');
+  }
+
   function renderExecutiveSummary(st) {
-    var pctI = Math.round(st.totalImprevista / st.totalTasks * 100);
-    var pctC = Math.round(st.totalColab / st.totalTasks * 100);
     setHTML('team-executive-summary',
-      '<h2 style="font-size:16px;margin-bottom:12px;font-weight:700">Resumen Ejecutivo \u2013 '+(currentReport?currentReport.dateLabel:'')+'</h2>'+
-      '<p style="font-size:13.5px;line-height:1.7;opacity:.92;margin-bottom:10px">'+
-        'El equipo registr\u00f3 un total de <strong>'+st.totalTasks+' asignaciones de tareas</strong> distribuidas entre <strong>'+
-        st.numPersons+' miembros</strong>, alcanzando un cumplimiento general del <strong>'+st.compliance+'%</strong> ('+
-        st.totalDone+' completadas, '+st.totalPending+' pendientes). El promedio de carga fue de '+st.avgTasks+' tareas por persona.</p>'+
-      '<p style="font-size:13.5px;line-height:1.7;opacity:.92;margin-bottom:10px">'+
-        'Se ejecutaron <strong>'+st.totalImprevista+' tareas imprevistas</strong> ('+pctI+'% del total), lo que evidencia capacidad de respuesta ante situaciones no planificadas. '+
-        'El <strong>'+pctC+'%</strong> de las asignaciones correspondieron a trabajo colaborativo ('+st.totalColab+' tareas).</p>'+
-      '<p style="font-size:13.5px;line-height:1.7;opacity:.92">'+
-        '<strong>'+st.maxLoad[0]+'</strong> concentr\u00f3 la mayor carga laboral con '+st.maxLoad[1].total+' tareas.'+
-        (st.stars.length ? ' Miembros con cumplimiento perfecto (100%): <strong>'+st.stars.join(', ')+'</strong>.' : '')+'</p>');
+      '<h3>Board Snapshot</h3>' +
+      '<p style="font-size:13.5px;line-height:1.7;color:#334155">This view is based directly on Monday board <strong>' + st.board.name + '</strong>. There are <strong>' + formatNumber(st.totalItems) +
+      ' items</strong> across <strong>' + formatNumber(st.moduleCount) + ' modules</strong>, with <strong>' + formatNumber(st.done) +
+      ' done</strong>, <strong>' + formatNumber(st.working) + ' in progress</strong>, and <strong>' + formatNumber(st.todo) +
+      ' not started</strong>. Use this page to spot owner workload, blocked items, and module-level progress quickly.</p>');
   }
 
-  /* ── 10. renderFindings ── */
   function renderFindings(st) {
-    var pctI = Math.round(st.totalImprevista / st.totalTasks * 100);
-    var findings = [
-      { type:'positive', icon:'\u2705', text:'Cumplimiento general del '+st.compliance+'%: el equipo mantiene un ritmo de ejecuci\u00f3n s\u00f3lido.' },
-      { type:'positive', icon:'\u2b50', text:st.stars.length+' persona'+(st.stars.length>1?'s':'')+' con cumplimiento del 100%: '+st.stars.join(', ')+'.' },
-      { type:'warning',  icon:'\u26a0\ufe0f', text:st.maxLoad[0]+' concentra '+st.maxLoad[1].total+' tareas ('+st.maxLoad[1].imprevista+' imprevistas). Posible riesgo de sobrecarga.' },
-      { type:'warning',  icon:'\u23f3', text:st.totalPending+' tareas pendientes se arrastran al siguiente d\u00eda. '+st.maxPending[0]+' acumula la mayor cantidad ('+st.maxPending[1].pending+').' },
-      { type:'info',     icon:'\ud83d\udd04', text:'El '+pctI+'% de las tareas fueron imprevistas ('+st.totalImprevista+' de '+st.totalTasks+'). Alta reactividad del equipo.' },
-      { type:'info',     icon:'\ud83e\udd1d', text:st.totalColab+' asignaciones colaborativas ('+Math.round(st.totalColab/st.totalTasks*100)+'%). Buena coordinaci\u00f3n entre miembros.' }
-    ];
-    var cls = { positive:'tm-finding-positive', warning:'tm-finding-warning', risk:'tm-finding-risk', info:'tm-finding-info' };
-    setHTML('team-findings',
-      '<h3 style="font-size:15px;font-weight:700;margin-bottom:12px">Hallazgos Clave</h3>'+
-      findings.map(function(f) {
-        return '<div class="tm-finding-item '+cls[f.type]+'"><span style="font-size:16px;flex-shrink:0">'+f.icon+'</span><span style="font-size:13px">'+f.text+'</span></div>';
-      }).join(''));
+    var topGroups = st.groupEntries.filter(function(group) { return group.open > 0; }).slice(0, 4);
+    var html = topGroups.map(function(group) {
+      return '<div class="tm-finding-item tm-finding-warning"><span style="font-size:16px;flex-shrink:0">📌</span><span style="font-size:13px"><strong>' +
+        group.name + '</strong> has ' + formatNumber(group.open) + ' open items and ' + formatNumber(group.late + group.onHold) +
+        ' blocked/late statuses.</span></div>';
+    }).join('');
+    setHTML('team-findings', '<h3>Modules Needing Attention</h3>' + html);
   }
 
-  /* ── 11. renderRecommendations ── */
   function renderRecommendations(st) {
-    var recs = [];
-    if (st.maxLoad[1].total >= 6)
-      recs.push({ icon:'\ud83d\udccb', text:'Redistribuir carga de '+st.maxLoad[0]+': con '+st.maxLoad[1].total+' tareas asignadas, es recomendable priorizar o reasignar para evitar acumulaci\u00f3n.' });
-    if (st.maxPending[1].pending >= 3)
-      recs.push({ icon:'\ud83d\udd0d', text:'Monitorear pendientes de '+st.maxPending[0]+': acumula '+st.maxPending[1].pending+' tareas sin completar que podr\u00edan impactar sprints futuros.' });
-    var entries = Object.entries(st.perPerson);
-    var minLoad = entries.reduce(function(min,e){ return e[1].total < min[1].total ? e : min; }, entries[0]);
-    if (st.maxLoad[1].total > minLoad[1].total * 3)
-      recs.push({ icon:'\u2696\ufe0f', text:'Balancear la carga: mientras '+shortName(st.maxLoad[0])+' tiene '+st.maxLoad[1].total+' tareas, '+shortName(minLoad[0])+' tiene '+minLoad[1].total+'. Evaluar redistribuci\u00f3n.' });
-    var pctI = Math.round(st.totalImprevista / st.totalTasks * 100);
-    if (pctI > 20)
-      recs.push({ icon:'\ud83d\udcca', text:'Documentar causa ra\u00edz de imprevistas: el '+pctI+'% de tareas fueron imprevistas. Identificar patrones para reducir variabilidad.' });
-    if (st.totalColab > 0)
-      recs.push({ icon:'\ud83e\udd1d', text:'Mantener el modelo de trabajo colaborativo. La din\u00e1mica demostr\u00f3 efectividad. Considerar replicarlo.' });
-    recs.push({ icon:'\u23f0', text:'Establecer checkpoints intra-d\u00eda para tareas de alta dependencia para detectar bloqueos tempranamente.' });
-
-    setHTML('team-recommendations',
-      '<h3 style="font-size:15px;font-weight:700;margin-bottom:12px">Recomendaciones</h3>'+
-      recs.map(function(r) {
-        return '<div class="tm-finding-item tm-finding-info"><span style="font-size:16px;flex-shrink:0">'+r.icon+'</span><span style="font-size:13px">'+r.text+'</span></div>';
-      }).join(''));
+    var owners = st.ownerEntries.slice().sort(function(a, b) { return b[1].blocked - a[1].blocked; }).filter(function(pair) {
+      return pair[1].blocked > 0 || pair[1].open > 0;
+    }).slice(0, 4);
+    var html = owners.map(function(pair) {
+      var s = pair[1];
+      return '<div class="tm-finding-item tm-finding-info"><span style="font-size:16px;flex-shrink:0">👤</span><span style="font-size:13px"><strong>' +
+        pair[0] + '</strong>: ' + formatNumber(s.open) + ' open, ' + formatNumber(s.blocked) + ' blocked, ' +
+        formatNumber(s.done) + ' done.</span></div>';
+    }).join('');
+    setHTML('team-recommendations', '<h3>Owner Work Snapshot</h3>' + html);
   }
 
-  /* ── 12. renderPMComment ── */
-  function renderPMComment(st) {
+  function renderPMComment() {
     setHTML('team-pm-comment',
-      '<h2 style="font-size:16px;margin-bottom:12px;font-weight:700">Comentario del Project Manager</h2>'+
-      '<p style="font-size:13.5px;line-height:1.7;opacity:.92;margin-bottom:10px">'+
-        'Buen d\u00eda de ejecuci\u00f3n para el equipo. Un cumplimiento del '+st.compliance+'% es '+(st.compliance>=80?'positivo':'aceptable')+
-        ', especialmente considerando que casi un '+Math.round(st.totalImprevista/st.totalTasks*100)+'% de las tareas fueron imprevistas y el equipo las absorbi\u00f3 sin dejar caer las planificadas.</p>'+
-      '<p style="font-size:13.5px;line-height:1.7;opacity:.92;margin-bottom:10px">'+
-        'El foco de atenci\u00f3n para ma\u00f1ana es <strong>'+st.maxPending[0]+'</strong>: acumula la mayor cantidad de pendientes. '+
-        'Recomiendo una revisi\u00f3n de prioridades en el standup para asegurar que los bloqueos se resuelvan primero.</p>'+
-      '<p style="margin-top:12px;opacity:.6;font-size:12px">\u2014 An\u00e1lisis generado autom\u00e1ticamente | Dashboard de Desempe\u00f1o v1.0</p>');
+      '<h3>How To Read This Board</h3>' +
+      '<p style="font-size:13.5px;line-height:1.7;color:#334155">Use the KPI row for the big picture, the charts for status and workload distribution, the owner cards for individual follow-up, and the due-soon list as the execution queue. Statuses come directly from Monday: <strong>Done</strong>, <strong>Working on it</strong>, <strong>To Do</strong>, <strong>Late</strong>, and <strong>On Hold</strong>.</p>');
   }
 
-  /* ── 13. renderTrend ── */
-  function renderTrend(reports) {
-    var canvas = document.getElementById('chartTeamTrend');
-    if (!canvas) return;
-    var section = document.getElementById('team-trend-section');
-
-    if (reports.length < 2) {
-      canvas.style.display = 'none';
-      if (section) {
-        var existing = section.querySelector('.tm-trend-msg');
-        if (!existing) {
-          var p = document.createElement('p');
-          p.className = 'tm-trend-msg';
-          p.style.cssText = 'color:#64748b;font-size:13px;padding:16px;text-align:center';
-          p.textContent = 'El gr\u00e1fico de tendencia se activar\u00e1 cuando haya m\u00e1s de un d\u00eda de datos hist\u00f3ricos.';
-          section.appendChild(p);
-        }
-      }
-      return;
-    }
-    canvas.style.display = '';
-    var old = section ? section.querySelector('.tm-trend-msg') : null;
-    if (old) old.remove();
-
-    var sorted = reports.slice().sort(function(a,b){ return a.date.localeCompare(b.date); });
-    var points = sorted.map(function(r) {
-      var s = calcStats(r);
-      return { date: r.date, label: r.dateLabel.split(',')[0] || r.date, compliance: s.compliance };
-    });
-
-    var ctx = canvas.getContext('2d');
-    var W = canvas.width  = canvas.parentElement.clientWidth - 40;
-    var H = canvas.height = 200;
-    var mL = 50, mR = 30, mT = 20, mB = 40;
-    var cW = W-mL-mR, cH = H-mT-mB;
-    ctx.clearRect(0, 0, W, H);
-
-    // grid
-    ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 1;
-    for (var g = 0; g <= 100; g += 25) {
-      var gy = mT + cH - (g/100)*cH;
-      ctx.beginPath(); ctx.moveTo(mL, gy); ctx.lineTo(W-mR, gy); ctx.stroke();
-      ctx.fillStyle = '#94a3b8'; ctx.font = '10px Inter, sans-serif'; ctx.textAlign = 'right';
-      ctx.fillText(g+'%', mL-6, gy+3);
-    }
-    // line
-    ctx.strokeStyle = '#2563eb'; ctx.lineWidth = 2.5; ctx.beginPath();
-    points.forEach(function(p, i) {
-      var x = mL + (i / (points.length - 1)) * cW;
-      var y = mT + cH - (p.compliance / 100) * cH;
-      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    });
-    ctx.stroke();
-    // dots
-    points.forEach(function(p, i) {
-      var x = mL + (i / (points.length - 1)) * cW;
-      var y = mT + cH - (p.compliance / 100) * cH;
-      ctx.beginPath(); ctx.arc(x, y, 5, 0, 2*Math.PI);
-      ctx.fillStyle = '#2563eb'; ctx.fill();
-      ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-      ctx.fillStyle = '#1e293b'; ctx.font = 'bold 11px Space Grotesk, sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText(p.compliance + '%', x, y - 12);
-      ctx.fillStyle = '#64748b'; ctx.font = '10px Inter, sans-serif';
-      ctx.fillText(p.label, x, H - mB + 16);
-    });
-  }
-
-  /* ── 14. filterTasks ── */
   function filterTasks(filter) {
     currentFilter = filter;
-    document.querySelectorAll('.tm-filter-btn').forEach(function(b) {
-      b.classList.toggle('active', b.dataset.filter === filter);
-    });
-    document.querySelectorAll('.tm-task-item').forEach(function(li) {
-      var st = li.getAttribute('data-status');
-      var imp = li.getAttribute('data-imprevista') === 'true';
-      var col = li.getAttribute('data-colaborativa') === 'true';
-      var show = true;
-      if (filter === 'done')         show = (st === 'done');
-      else if (filter === 'pending') show = (st === 'pending');
-      else if (filter === 'imprevista')   show = imp;
-      else if (filter === 'colaborativa') show = col;
-      li.style.display = show ? '' : 'none';
+    document.querySelectorAll('.tm-filter-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.filter === filter);
     });
     document.querySelectorAll('.tm-person-card').forEach(function(card) {
-      if (filter === 'all') { card.style.display = ''; return; }
-      var vis = card.querySelectorAll('.tm-task-item:not([style*="display: none"])');
-      card.style.display = vis.length > 0 ? '' : 'none';
+      var visibleItems = 0;
+      card.querySelectorAll('.tm-task-item').forEach(function(li) {
+        var status = li.getAttribute('data-status') || '';
+        var isOverdue = li.getAttribute('data-overdue') === 'true';
+        var isDone = status === 'Done';
+        var isWorking = status === 'Working on it';
+        var isBlocked = status === 'Late' || status === 'On Hold' || isOverdue;
+        var isTodo = status === 'To Do' || status === 'Unassigned';
+        var show = filter === 'all' ||
+          (filter === 'done' && isDone) ||
+          (filter === 'working' && isWorking) ||
+          (filter === 'blocked' && isBlocked) ||
+          (filter === 'todo' && isTodo);
+        li.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems ? '' : 'none';
     });
+    var searchInput = document.getElementById('team-search');
+    if (searchInput && searchInput.value) filterBySearch(searchInput.value);
   }
 
-  /* ── 15. filterBySearch ── */
   function filterBySearch(query) {
     var q = (query || '').toLowerCase();
     document.querySelectorAll('.tm-person-card').forEach(function(card) {
-      card.style.display = card.getAttribute('data-name').indexOf(q) >= 0 ? '' : 'none';
+      var matchesQuery = card.getAttribute('data-name').indexOf(q) >= 0;
+      var hasVisibleTasks = Array.from(card.querySelectorAll('.tm-task-item')).some(function(li) {
+        return li.style.display !== 'none';
+      });
+      card.style.display = matchesQuery && hasVisibleTasks ? '' : 'none';
     });
   }
 
-  /* ── 16. toggleCard ── */
   function toggleCard(headerEl) {
     var body = headerEl.nextElementSibling;
     var arrow = headerEl.querySelector('.tm-arrow');
@@ -994,30 +1155,31 @@ const TeamDashboard = (function() {
     if (arrow) arrow.classList.toggle('open');
   }
 
-  /* ── resize handler ── */
   window.addEventListener('resize', function() {
     if (cachedStats) renderCharts(cachedStats);
-    if (allReports.length > 1) renderTrend(allReports);
   });
 
-  /* ── public API ── */
   return {
     loadData: loadData,
-    selectDate: selectDate,
     filterTasks: filterTasks,
     filterBySearch: filterBySearch,
     toggleCard: toggleCard,
     sortPersons: function(by) {
       currentSort = by;
-      document.querySelectorAll('.tm-sort-btn').forEach(function(b) {
-        b.classList.toggle('active', b.dataset.sort === by);
+      document.querySelectorAll('.tm-sort-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.sort === by);
       });
-      if (cachedStats) renderPersons(cachedStats, by);
+      if (cachedStats) {
+        renderPersons(cachedStats, by);
+        filterTasks(currentFilter);
+      }
+    },
+    refresh: function() {
+      if (!cachedStats) return;
+      renderCharts(cachedStats);
     }
   };
 })();
-
-
 // ── Bootstrap ─────────────────────────────────
 (async function init() {
   try {
@@ -1027,7 +1189,7 @@ const TeamDashboard = (function() {
     setText('report-date', data.reportDate);
     setText('footer-date', data.reportDate);
 
-    renderStats(data.stats);
+    renderStats(data);
     renderProgressBreakdown(data);
     renderMigrationItems(data.migrationItems);
     renderProducts(data.products);

@@ -1,11 +1,11 @@
 {
-  "reportDate": "April 1, 2026",
+  "reportDate": "April 16, 2026",
 
   "stats": {
     "totalItems": 14,
     "completed": 10,
-    "inProgress": 3,
-    "pending": 1
+    "inProgress": 4,
+    "pending": 0
   },
 
   "migrationItems": [
@@ -17,26 +17,44 @@
     { "name": "Incoterm",                     "status": "done"    },
     { "name": "Unit",                         "status": "done"    },
     { "name": "Business Unit",                "status": "done"    },
-    { "name": "Manufacturer",                 "status": "working" },
+    { "name": "Manufacturer",                 "status": "done" },
     { "name": "Item Type",                    "status": "done"    },
     { "name": "Item Category",                "status": "done"    },
     { "name": "Items (Products)",             "status": "working" },
     { "name": "Accounts (Client - Vendors)",  "status": "working" },
-    { "name": "Contacs",                      "status": "pending" }
+    { "name": "Contacts",                     "status": "working" }
   ],
 
   "products": {
-    "REC": { "total": 197601, "migrated": 128, "status": "working" },
-    "RUS": { "total": 202034, "migrated": 0,   "status": "pending" },
-    "RMX": { "total": 164648, "migrated": 0,   "status": "pending" },
-    "RBR": { "total": 117351, "migrated": 0,   "status": "pending" }
+    "summary": {
+      "targetTotal": 681634,
+      "migrated": 12609,
+      "active": 12609,
+      "sourceLabel": "Current in redix_core",
+      "note": "Migrated products are mixed in the new database and cannot be split by source company."
+    },
+    "byCompany": {
+      "REC": { "total": 197601, "status": "done" },
+      "RUS": { "total": 202034, "status": "working" },
+      "RMX": { "total": 164648, "status": "pending" },
+      "RBR": { "total": 117351, "status": "pending" }
+    }
   },
 
   "photos": {
-    "REC": { "total": 179215, "status": "pending" },
-    "RUS": { "total": 201882, "status": "pending" },
-    "RBR": { "total": 123156, "status": "pending" },
-    "RMX": { "total": 160273, "status": "pending" }
+    "summary": {
+      "targetTotal": 664526,
+      "migrated": 18821,
+      "active": 18821,
+      "sourceLabel": "Current in redix_core",
+      "note": "Migrated photo records are mixed in the new database and cannot be split by source company."
+    },
+    "byCompany": {
+      "REC": { "total": 179215, "status": "pending" },
+      "RUS": { "total": 201882, "status": "pending" },
+      "RBR": { "total": 123156, "status": "pending" },
+      "RMX": { "total": 160273, "status": "pending" }
+    }
   },
 
   "storage": {
@@ -48,39 +66,33 @@
   },
 
   "clients": {
-    "REC": { "total": 2552, "active": null },
-    "RUS": { "total": 1394, "active": 1383 },
+    "REC": { "total": 421, "active": 421, "migrated": 421 },
+    "RUS": { "total": 466, "active": 466, "migrated": 466 },
     "RMX": null,
     "RBR": null
   },
 
   "vendors": {
-    "REC": { "total": 2779, "active": 86   },
-    "RUS": { "total": 2594, "active": 2584 },
+    "REC": { "total": 2430, "active": 2421, "migrated": 2430 },
+    "RUS": { "total": 2548, "active": 2548, "migrated": 2548 },
     "RMX": null,
     "RBR": null
   },
 
   "contacts": {
-    "REC": 4595,
-    "RUS": 3538,
+    "REC": 3795,
+    "RUS": 4038,
     "RMX": null,
     "RBR": null
   },
 
   "orders": {
     "REC": {
-      "SO": 11,
-      "SOIds": [
-        "EC2200047","EC2400028","RECD2500024","RECD2500040","RECD2500041",
-        "RECD2600000","RECD2600001","RECD2600002","RECD2600003","RECD2600004","RECD2600005"
-      ],
-      "PO": 8,
-      "POIds": [
-        "EC2400022","RECD2600001","RECD2600009","RECD2600011",
-        "RECD2600012","RECD2600013","RECD2600014","RECD2600015"
-      ],
-      "Quotes": 265
+      "SO": 0,
+      "SOIds": [],
+      "PO": 0,
+      "POIds": [],
+      "Quotes": 0
     },
     "RUS": null,
     "RMX": null,
