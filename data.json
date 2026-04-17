@@ -1,10 +1,10 @@
 {
-  "reportDate": "April 16, 2026",
+  "reportDate": "April 17, 2026",
 
   "stats": {
     "totalItems": 14,
-    "completed": 10,
-    "inProgress": 4,
+    "completed": 11,
+    "inProgress": 3,
     "pending": 0
   },
 
@@ -28,8 +28,8 @@
   "products": {
     "summary": {
       "targetTotal": 681634,
-      "migrated": 12609,
-      "active": 12609,
+      "migrated": 83365,
+      "active": 83365,
       "sourceLabel": "Current in redix_core",
       "note": "Migrated products are mixed in the new database and cannot be split by source company."
     },
@@ -44,8 +44,8 @@
   "photos": {
     "summary": {
       "targetTotal": 664526,
-      "migrated": 18821,
-      "active": 18821,
+      "migrated": 98176,
+      "active": 98176,
       "sourceLabel": "Current in redix_core",
       "note": "Migrated photo records are mixed in the new database and cannot be split by source company."
     },
@@ -66,21 +66,21 @@
   },
 
   "clients": {
-    "REC": { "total": 421, "active": 421, "migrated": 421 },
+    "REC": { "total": 421, "active": 421, "migrated": 38 },
     "RUS": { "total": 466, "active": 466, "migrated": 466 },
     "RMX": null,
     "RBR": null
   },
 
   "vendors": {
-    "REC": { "total": 2430, "active": 2421, "migrated": 2430 },
+    "REC": { "total": 2430, "active": 2421, "migrated": 85 },
     "RUS": { "total": 2548, "active": 2548, "migrated": 2548 },
     "RMX": null,
     "RBR": null
   },
 
   "contacts": {
-    "REC": 3795,
+    "REC": 197,
     "RUS": 4038,
     "RMX": null,
     "RBR": null
