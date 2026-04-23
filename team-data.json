@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-23T17:18:10.990Z",
+  "syncedAt": "2026-04-23T17:40:41.833Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -49,7 +49,7 @@
       },
       {
         "id": "group_mm2mrb0k",
-        "title": "School"
+        "title": "Academy"
       },
       {
         "id": "group_mm28rzpm",
@@ -3026,7 +3026,7 @@
       "id": "11746226892",
       "name": "Conexión Leads con web RBR y RMX",
       "group": "Leads",
-      "status": "Blocked",
+      "status": "Done",
       "owners": [
         "Celia Giraldo"
       ],
@@ -3036,8 +3036,8 @@
       "timelineStart": "2026-04-17",
       "timelineEnd": "2026-04-17",
       "dueDate": "2026-04-17",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-23",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
       "isLate": false,
@@ -3114,7 +3114,7 @@
       "id": "11746247280",
       "name": "Conexión Leads con web RUS y REC",
       "group": "Leads",
-      "status": "Blocked",
+      "status": "Done",
       "owners": [
         "Celia Giraldo"
       ],
@@ -3124,8 +3124,8 @@
       "timelineStart": "2026-04-16",
       "timelineEnd": "2026-04-16",
       "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-23",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
       "isLate": false,
@@ -3180,7 +3180,7 @@
       "id": "11746254073",
       "name": "Investigación integración correo",
       "group": "Leads",
-      "status": "Late",
+      "status": "Working on it",
       "owners": [
         "Natalia Martinez",
         "Celia Giraldo"
@@ -3194,9 +3194,9 @@
       "dueDate": "2026-04-07",
       "completedDate": null,
       "isDone": false,
-      "isWorking": false,
+      "isWorking": true,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": true
     },
@@ -3753,21 +3753,21 @@
     {
       "id": "11806335932",
       "name": "Creación módulo School (gestión de contenido)",
-      "group": "School",
-      "status": "To Do",
+      "group": "Academy",
+      "status": "Working on it",
       "owners": [
-        "Natalia Martinez"
+        "Celia Giraldo"
       ],
       "ownerIds": [
-        55381237
+        50034905
       ],
       "timelineStart": "2026-04-24",
       "timelineEnd": "2026-04-24",
       "dueDate": "2026-04-24",
       "completedDate": null,
       "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
+      "isWorking": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -4480,7 +4480,7 @@
       "id": "11806447413",
       "name": "Corrección y revisión Tool búsqueda número de parte",
       "group": "Productos/Items",
-      "status": "To Do",
+      "status": "Done",
       "owners": [
         "Celia Giraldo"
       ],
@@ -4490,10 +4490,10 @@
       "timelineStart": "2026-04-20",
       "timelineEnd": "2026-04-20",
       "dueDate": "2026-04-20",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-23",
+      "isDone": true,
       "isWorking": false,
-      "isTodo": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -4774,7 +4774,7 @@
     {
       "id": "11807509639",
       "name": "Entrega School",
-      "group": "School",
+      "group": "Academy",
       "status": "To Do",
       "owners": [
         "RSI Team"
