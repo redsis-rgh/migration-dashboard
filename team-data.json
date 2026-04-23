@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-23T17:40:41.833Z",
+  "syncedAt": "2026-04-23T17:43:58.910Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -3048,7 +3048,7 @@
       "id": "11746228382",
       "name": "Apoyo en BD módulo Leads",
       "group": "Leads",
-      "status": "Blocked",
+      "status": "Done",
       "owners": [
         "Jessica Rodgers"
       ],
@@ -3058,8 +3058,8 @@
       "timelineStart": "2026-04-14",
       "timelineEnd": "2026-04-14",
       "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-23",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
       "isLate": false,
@@ -4238,7 +4238,7 @@
       "id": "11806345520",
       "name": "Añadir funcionalidad de búsqueda por parte",
       "group": "Productos/Items",
-      "status": "Blocked",
+      "status": "Done",
       "owners": [
         "Jessica Rodgers"
       ],
@@ -4248,8 +4248,8 @@
       "timelineStart": "2026-04-20",
       "timelineEnd": "2026-04-20",
       "dueDate": "2026-04-20",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-23",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
       "isLate": false,
@@ -4835,7 +4835,7 @@
       "id": "11812070079",
       "name": "Correcion de cuentas duplicadas",
       "group": "Productos/Items",
-      "status": "Working on it",
+      "status": "On Hold",
       "owners": [
         "Jessica Rodgers"
       ],
@@ -4847,10 +4847,10 @@
       "dueDate": null,
       "completedDate": null,
       "isDone": false,
-      "isWorking": true,
+      "isWorking": false,
       "isTodo": false,
       "isLate": false,
-      "isOnHold": false,
+      "isOnHold": true,
       "hasMultipleOwners": false
     },
     {
