@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-16T22:07:28.418Z",
+  "syncedAt": "2026-04-23T17:13:08.868Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -29,11 +29,27 @@
       },
       {
         "id": "group_mm28avpc",
-        "title": "PO"
+        "title": "VPO"
       },
       {
         "id": "group_mm28pfpj",
         "title": "Invoice"
+      },
+      {
+        "id": "group_mm28dyd0",
+        "title": "Leads"
+      },
+      {
+        "id": "group_mm2m26ga",
+        "title": "Oportunities"
+      },
+      {
+        "id": "group_mm2mt859",
+        "title": "Activities"
+      },
+      {
+        "id": "group_mm2mrb0k",
+        "title": "School"
       },
       {
         "id": "group_mm28rzpm",
@@ -56,1386 +72,26 @@
         "title": "General"
       },
       {
-        "id": "group_mm28dyd0",
-        "title": "Leads"
+        "id": "group_mm2mwgzk",
+        "title": "Integrations"
+      },
+      {
+        "id": "group_mm2me3h8",
+        "title": "To Buy"
       }
     ]
   },
   "items": [
     {
-      "id": "11707143559",
-      "name": "- Completar migración de productos de REC.",
-      "group": "Productos/Items",
+      "id": "11706513857",
+      "name": "- Creación de túneles para ambientes productivo y desarrollo.",
+      "group": "Settings",
       "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707102939",
-      "name": "- QA de Productos y generación de hallazgos.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707131814",
-      "name": "- Desarrollo de app para migración de: - Productos de todas las sedes.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706598774",
-      "name": "- Migración de data legacy a redsis_core (Productos) de los últimos 12 meses (REC).",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707083401",
-      "name": "- Agregar descripción por idioma en tablas de producto.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707302347",
-      "name": "- Correcciones encontradas por QA (Productos)",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716312980",
-      "name": "Implementar botones conexión QuickBooks (items/productos)",
-      "group": "Productos/Items",
-      "status": "On Hold",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": true,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716322340",
-      "name": "Correcciones QA (productos) P2",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716305258",
-      "name": "CRUD Bill",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-12",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-09",
-      "completedDate": "2026-04-13",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716312724",
-      "name": "CRUD Inventory Site",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": "2026-04-14",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736937395",
-      "name": "Creación de TOOL n8n para obtener items Legacy.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736937778",
-      "name": "CRUD Inventory Transfer.",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716329496",
-      "name": "Automatización descripción/marca/especificaciones",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716340949",
-      "name": "Correcciones QA (productos)",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716329209",
-      "name": "QA Productos",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11737014523",
-      "name": "Ajustes POC Unify Alarm (email).",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716329456",
-      "name": "Migración productos todas las sedes",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11737038064",
-      "name": "Migración de datos nuevos a PostgreSQL: en curso REC",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-11",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11772642848",
-      "name": "Migración de datos nuevos a PostgreSQL: en curso RUS",
-      "group": "Productos/Items",
-      "status": "Working on it",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-11",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11772641782",
-      "name": "Migración de datos nuevos a PostgreSQL: en curso RBR",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-11",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11772656774",
-      "name": "Migración de datos nuevos a PostgreSQL: en curso RMX",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-11",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720495045",
-      "name": "QA Productos",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736923681",
-      "name": "Correcciones de Products.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736935035",
-      "name": "Botón para consumir flujo de obtener items legacy en Redix.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736935842",
-      "name": "CRUD Assembly.",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736996168",
-      "name": "QA Productos. 3",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736919403",
-      "name": "Integrar TOOL obtener items legacy con tool buscar part number en internet.",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745931785",
-      "name": "Montaje de app con Claudia",
-      "group": "Productos/Items",
-      "status": "Working on it",
       "owners": [
         "Bryan Romero"
       ],
       "ownerIds": [
         78618757
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745935776",
-      "name": "Validación de tablas Prisma (SO, To Buy, PO)",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745934864",
-      "name": "Import de Item en Tool n8n (pendiente desde 13 de abril)",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745946622",
-      "name": "Import de Item Backend",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745935045",
-      "name": "Import de Item Frontend",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745953364",
-      "name": "Apoyo a Potte en BD",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-17",
-      "timelineEnd": "2026-04-17",
-      "dueDate": "2026-04-17",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745931659",
-      "name": "QA Productos y Quotes",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745952145",
-      "name": "QA Productos y Quotes - 15 abril",
-      "group": "Productos/Items",
-      "status": "To Do",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745931534",
-      "name": "Montaje Web App migración",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745934505",
-      "name": "Migración Catalogs RGI y Productos RUS",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745946130",
-      "name": "Items Service y Non Inventory (prioridad alta)",
-      "group": "Productos/Items",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-14",
-      "completedDate": "2026-04-15",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706535219",
-      "name": "- Definición del plan de migración de cuentas.",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-06",
-      "timelineEnd": "2026-04-06",
-      "dueDate": "2026-04-06",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707114564",
-      "name": "- QA de cuentas y generación de hallazgos.",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707258853",
-      "name": "- Desarrollo de app para migración de: - Cuentas de todas las sedes.",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706563417",
-      "name": "- Migración de data legacy a redsis_core (Cuentas) (REC).",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": "2026-04-14",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707094713",
-      "name": "- Correcciones encontradas por QA (Cuentas).",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716319839",
-      "name": "Aplicar correcciones de cuentas en Redix",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716320761",
-      "name": "QA de cuentas (nueva ronda)",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716342098",
-      "name": "Completar migración cuentas REC",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": "2026-04-14",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716326375",
-      "name": "Correcciones QA (cuentas)",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716320700",
-      "name": "QA de cuentas",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716326376",
-      "name": "Migración cuentas todas las sedes",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720481717",
-      "name": "QA de Cuentas",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716312887",
-      "name": "Correcciones QA (cuentas) P2",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736907486",
-      "name": "Correcciones de Cuentas.",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746162155",
-      "name": "QA Accounts",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746076947",
-      "name": "Correcciones Accounts",
-      "group": "Accounts",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707099865",
-      "name": "- Implementar diseño de proposal en nueva rama basada en develop.",
-      "group": "Proposal",
-      "status": "Late",
-      "owners": [
-        "Michael Habib"
-      ],
-      "ownerIds": [
-        1201346
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707114377",
-      "name": "- Obtener feedback del proposal (Ricardo, Juan Gómez y Carla).",
-      "group": "Proposal",
-      "status": "Working on it",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706585288",
-      "name": "- Creación de proposal basado en PandaDocs.",
-      "group": "Proposal",
-      "status": "Done",
-      "owners": [
-        "Michael Habib"
-      ],
-      "ownerIds": [
-        1201346
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736990158",
-      "name": "Implementación de proposal en rama develop. (pendiente desde 9 de abril)",
-      "group": "Proposal",
-      "status": "Late",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746138776",
-      "name": "Preparación presentación portal",
-      "group": "Proposal",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746180226",
-      "name": "Programar reunión de presentación",
-      "group": "Proposal",
-      "status": "On Hold",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": true,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746177859",
-      "name": "Envío correo de publicación",
-      "group": "Proposal",
-      "status": "On Hold",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": true,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706578726",
-      "name": "- Fórmula de Quotation arreglada.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-06",
-      "timelineEnd": "2026-04-06",
-      "dueDate": "2026-04-06",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706514062",
-      "name": "- Botón de exportar a Excel con formato correcto para importar a IBACS.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
       ],
       "timelineStart": "2026-04-06",
       "timelineEnd": "2026-04-06",
@@ -1475,6 +131,72 @@
       "hasMultipleOwners": true
     },
     {
+      "id": "11706513933",
+      "name": "- Integración de cambios de QuickBooks a la rama dev.",
+      "group": "PlayGround Quickbooks",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-06",
+      "dueDate": "2026-04-06",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706514000",
+      "name": "- Deploy automático en ambiente DEV.",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-06",
+      "dueDate": "2026-04-06",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706514062",
+      "name": "- Botón de exportar a Excel con formato correcto para importar a IBACS.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-06",
+      "dueDate": "2026-04-06",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
       "id": "11706534938",
       "name": "- Creación de tablas de términos y condiciones.",
       "group": "Quotation",
@@ -1495,6 +217,76 @@
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
+    },
+    {
+      "id": "11706535218",
+      "name": "- Corrección de expiración de token para cierre de sesión en Redix.",
+      "group": "Security",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-06",
+      "dueDate": "2026-04-06",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706535219",
+      "name": "- Definición del plan de migración de cuentas.",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-06",
+      "dueDate": "2026-04-06",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706546027",
+      "name": "- QA de cotización y SO (en caso de finalizar la creación de la SO).",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera",
+        "Natalia Martinez",
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        56509783,
+        55381237,
+        50034905
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": true
     },
     {
       "id": "11706550238",
@@ -1545,144 +337,8 @@
       "hasMultipleOwners": true
     },
     {
-      "id": "11706546027",
-      "name": "- QA de cotización y SO (en caso de finalizar la creación de la SO).",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Claudia Herrera",
-        "Natalia Martinez",
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        56509783,
-        55381237,
-        50034905
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": true
-    },
-    {
       "id": "11706554066",
       "name": "- Creación de tablas de Sales Rep.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707109967",
-      "name": "- QA de Quotation y generación de hallazgos.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707114082",
-      "name": "- Crear automatización para obtener descripción, marca y especificaciones por número de parte.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707083199",
-      "name": "- Borrar data dummy.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707256312",
-      "name": "- Correcciones encontradas por QA (Quotation).",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706554196",
-      "name": "- Revisión de cambios a nivel de base de datos por Prisma",
       "group": "Quotation",
       "status": "Done",
       "owners": [
@@ -1725,339 +381,9 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11716342588",
-      "name": "Implementación diseño proposal (nueva rama)",
+      "id": "11706554196",
+      "name": "- Revisión de cambios a nivel de base de datos por Prisma",
       "group": "Quotation",
-      "status": "To Do",
-      "owners": [
-        "Michael Habib"
-      ],
-      "ownerIds": [
-        1201346
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716342652",
-      "name": "Revisión envío PDF a impresora",
-      "group": "Quotation",
-      "status": "Late",
-      "owners": [
-        "Michael Habib"
-      ],
-      "ownerIds": [
-        1201346
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716342650",
-      "name": "Correcciones QA (quotation)",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716342626",
-      "name": "QA de Quotation",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720527080",
-      "name": "Planning Redix semana del 13 al 17 de abril.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720526529",
-      "name": "POC Unify Alarm Trigger",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716322384",
-      "name": "Correcciones QA (quotation) P2",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736924602",
-      "name": "Correcciones de Quote.",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720188505",
-      "name": "Correcciones de Quote",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736955828",
-      "name": "QA Quotes. 3",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746121274",
-      "name": "Corrección de errores en Quotes y SO",
-      "group": "Quotation",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706564437",
-      "name": "- Creación de SO a partir de la quote.",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706585088",
-      "name": "- CRUD de SO  en QuickBooks.",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707091382",
-      "name": "- Ajustes en SO.",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707089776",
-      "name": "- QA de SO y generación de hallazgos.",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707083400",
-      "name": "- Revisión y corrección de cambios en BD módulo SO.",
-      "group": "SO",
       "status": "Done",
       "owners": [
         "Jessica Rodgers"
@@ -2065,318 +391,10 @@
       "ownerIds": [
         56370605
       ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716305312",
-      "name": "Ajustes parte 2 SO",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716312849",
-      "name": "Ajustes en SO",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716312914",
-      "name": "QA SO",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720207261",
-      "name": "Correcciones de SO",
-      "group": "SO",
-      "status": "Done",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745925329",
-      "name": "Validación de tablas (SO, To Buy, PO) - P2",
-      "group": "SO",
-      "status": "Working on it",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-17",
-      "dueDate": "2026-04-17",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706562132",
-      "name": "- CRUD de PO en QuickBooks.",
-      "group": "PO",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
       "timelineStart": "2026-04-07",
       "timelineEnd": "2026-04-07",
       "dueDate": "2026-04-07",
       "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720383753",
-      "name": "Creación de tabla Credit Card.",
-      "group": "PO",
-      "status": "To Do",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746214652",
-      "name": "Vista To Buy",
-      "group": "PO",
-      "status": "To Do",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746215516",
-      "name": "Creación módulo Purchase Order",
-      "group": "PO",
-      "status": "To Do",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-17",
-      "timelineEnd": "2026-04-17",
-      "dueDate": "2026-04-17",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716305297",
-      "name": "CRUD Credit Card Charges",
-      "group": "PO",
-      "status": "To Do",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707099439",
-      "name": "- CRUD de Invoice.",
-      "group": "Invoice",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716312888",
-      "name": "CRUD Invoice",
-      "group": "Invoice",
-      "status": "Done",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706535218",
-      "name": "- Corrección de expiración de token para cierre de sesión en Redix.",
-      "group": "Security",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-06",
-      "timelineEnd": "2026-04-06",
-      "dueDate": "2026-04-06",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736940815",
-      "name": "Quitar responsabilidades por compañía en autenticación (save automático de userauth a Redix).",
-      "group": "Security",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": "2026-04-16",
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
@@ -2394,6 +412,72 @@
       ],
       "ownerIds": [
         55381237
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706562132",
+      "name": "- CRUD de PO en QuickBooks.",
+      "group": "VPO",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706563417",
+      "name": "- Migración de data legacy a redsis_core (Cuentas) (REC).",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": "2026-04-14",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706564437",
+      "name": "- Creación de SO a partir de la quote.",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
       ],
       "timelineStart": "2026-04-07",
       "timelineEnd": "2026-04-07",
@@ -2451,6 +535,50 @@
       "hasMultipleOwners": false
     },
     {
+      "id": "11706578726",
+      "name": "- Fórmula de Quotation arreglada.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-06",
+      "dueDate": "2026-04-06",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706585088",
+      "name": "- CRUD de SO  en QuickBooks.",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
       "id": "11706585241",
       "name": "- Revisar proceso para envío directo de PDF a impresora.",
       "group": "Settings",
@@ -2473,438 +601,20 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11707092990",
-      "name": "- Ejecución de propuesta a nivel de organización.",
-      "group": "Settings",
-      "status": "Late",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707106087",
-      "name": "- Ejecución de visibilidad de módulos.",
-      "group": "Settings",
-      "status": "Late",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706513857",
-      "name": "- Creación de túneles para ambientes productivo y desarrollo.",
-      "group": "Settings",
+      "id": "11706585288",
+      "name": "- Creación de proposal basado en PandaDocs.",
+      "group": "Proposal",
       "status": "Done",
       "owners": [
-        "Bryan Romero"
+        "Michael Habib"
       ],
       "ownerIds": [
-        78618757
+        1201346
       ],
-      "timelineStart": "2026-04-06",
-      "timelineEnd": "2026-04-06",
-      "dueDate": "2026-04-06",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706514000",
-      "name": "- Deploy automático en ambiente DEV.",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-06",
-      "timelineEnd": "2026-04-06",
-      "dueDate": "2026-04-06",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707092865",
-      "name": "- Crear ecosistema de BD para logs (activity).",
-      "group": "Settings",
-      "status": "Late",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707092843",
-      "name": "- Propuesta de manejo de roles (módulos / organización).",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707106207",
-      "name": "- Ejecución de CRUD para roles y permisos.",
-      "group": "Settings",
-      "status": "Working on it",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11707099220",
-      "name": "- Obtención de reglas de negocio para roles y permisos.",
-      "group": "Settings",
-      "status": "On Hold",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": true,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11720372358",
-      "name": "Agregar campo para logo de organización",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11737066689",
-      "name": "Poner a funcionar en productivo el ecosistema de logs de Redix",
-      "group": "Settings",
-      "status": "Late",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11716329154",
-      "name": "Agregar descripción por idioma",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-08",
-      "timelineEnd": "2026-04-08",
-      "dueDate": "2026-04-08",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746257942",
-      "name": "Montaje de entorno compartido de IA",
-      "group": "Settings",
-      "status": "To Do",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-17",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746261313",
-      "name": "Propuesta BD History (Registro del valor de los campos)",
-      "group": "Settings",
-      "status": "Working on it",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746261314",
-      "name": "Plan de trabajo propuesta BD History",
-      "group": "Settings",
-      "status": "Working on it",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746267129",
-      "name": "Propuesta BD Activity Logs",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746282804",
-      "name": "Plan de trabajo propuesta BD Activity Logs",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746261901",
-      "name": "Propuesta BD RedixOutBox",
-      "group": "Settings",
-      "status": "To Do",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746284767",
-      "name": "Plan de trabajo propuesta BD RedixOutBox",
-      "group": "Settings",
-      "status": "To Do",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746261385",
-      "name": "Puesta en marcha plan de trabajo BD History",
-      "group": "Settings",
-      "status": "Working on it",
-      "owners": [
-        "Maria Carolina"
-      ],
-      "ownerIds": [
-        89893323
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
       "dueDate": "2026-04-07",
       "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746165953",
-      "name": "Ajustes POC Unify Alarm",
-      "group": "Settings",
-      "status": "Done",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": "2026-04-16",
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
@@ -2913,66 +623,22 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11745934785",
-      "name": "Propuesta de manejo dinámico de formularios",
-      "group": "Settings",
-      "status": "Working on it",
+      "id": "11706595357",
+      "name": "- Finalizar deploy automático en productivo.",
+      "group": "Control de cambios",
+      "status": "Done",
       "owners": [
-        "Luis Potte Herrera"
+        "Bryan Romero"
       ],
       "ownerIds": [
-        56509695
+        78618757
       ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
       "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745925328",
-      "name": "Refactorización de widgets",
-      "group": "Settings",
-      "status": "Working on it",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11745952572",
-      "name": "Finalizar refactorización de widgets",
-      "group": "Settings",
-      "status": "Working on it",
-      "owners": [
-        "Luis Potte Herrera"
-      ],
-      "ownerIds": [
-        56509695
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
+      "isDone": true,
+      "isWorking": false,
       "isTodo": false,
       "isLate": false,
       "isOnHold": false,
@@ -3001,9 +667,141 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11706513933",
-      "name": "- Integración de cambios de QuickBooks a la rama dev.",
-      "group": "PlayGround Quickbooks",
+      "id": "11706595436",
+      "name": "- Liberar máquinas virtuales a Jack para montaje productivo.",
+      "group": "Control de cambios",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11706598774",
+      "name": "- Migración de data legacy a redsis_core (Productos) de los últimos 12 meses (REC).",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-07",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707083199",
+      "name": "- Borrar data dummy.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707083400",
+      "name": "- Revisión y corrección de cambios en BD módulo SO.",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707083401",
+      "name": "- Agregar descripción por idioma en tablas de producto.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707089776",
+      "name": "- QA de SO y generación de hallazgos.",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707091382",
+      "name": "- Ajustes en SO.",
+      "group": "SO",
       "status": "Done",
       "owners": [
         "Luis Potte Herrera"
@@ -3011,9 +809,163 @@
       "ownerIds": [
         56509695
       ],
-      "timelineStart": "2026-04-06",
-      "timelineEnd": "2026-04-06",
-      "dueDate": "2026-04-06",
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707092843",
+      "name": "- Propuesta de manejo de roles (módulos / organización).",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707092865",
+      "name": "- Crear ecosistema de BD para logs (activity).",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707092951",
+      "name": "- Demo de instalación de la API QuickBooks a Carolina.",
+      "group": "PlayGround Quickbooks",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707092990",
+      "name": "- Ejecución de propuesta a nivel de organización.",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707094713",
+      "name": "- Correcciones encontradas por QA (Cuentas).",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707099220",
+      "name": "- Obtención de reglas de negocio para roles y permisos.",
+      "group": "Settings",
+      "status": "On Hold",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": true,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707099439",
+      "name": "- CRUD de Invoice.",
+      "group": "Invoice",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-10",
       "completedDate": null,
       "isDone": true,
       "isWorking": false,
@@ -3045,20 +997,86 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11707092951",
-      "name": "- Demo de instalación de la API QuickBooks a Carolina.",
-      "group": "PlayGround Quickbooks",
-      "status": "Done",
+      "id": "11707099865",
+      "name": "- Implementar diseño de proposal en nueva rama basada en develop.",
+      "group": "Proposal",
+      "status": "Late",
       "owners": [
-        "Luis Dominguez Marquez"
+        "Michael Habib"
       ],
       "ownerIds": [
-        56420968
+        1201346
       ],
       "timelineStart": "2026-04-08",
       "timelineEnd": "2026-04-08",
       "dueDate": "2026-04-08",
       "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707102939",
+      "name": "- QA de Productos y generación de hallazgos.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707106087",
+      "name": "- Ejecución de visibilidad de módulos.",
+      "group": "Settings",
+      "status": "Late",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707106207",
+      "name": "- Ejecución de CRUD para roles y permisos.",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-17",
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
@@ -3081,6 +1099,2232 @@
       "timelineEnd": "2026-04-08",
       "dueDate": "2026-04-08",
       "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707109967",
+      "name": "- QA de Quotation y generación de hallazgos.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707114082",
+      "name": "- Crear automatización para obtener descripción, marca y especificaciones por número de parte.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707114377",
+      "name": "- Obtener feedback del proposal (Ricardo, Juan Gómez y Carla).",
+      "group": "Proposal",
+      "status": "On Hold",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": true,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707114564",
+      "name": "- QA de cuentas y generación de hallazgos.",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707131814",
+      "name": "- Desarrollo de app para migración de: - Productos de todas las sedes.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707143559",
+      "name": "- Completar migración de productos de REC.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707256312",
+      "name": "- Correcciones encontradas por QA (Quotation).",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707258853",
+      "name": "- Desarrollo de app para migración de: - Cuentas de todas las sedes.",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11707302347",
+      "name": "- Correcciones encontradas por QA (Productos)",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716305258",
+      "name": "CRUD Bill",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-12",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-09",
+      "completedDate": "2026-04-13",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716305259",
+      "name": "Implementación módulo Leads",
+      "group": "Leads",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716305297",
+      "name": "CRUD Credit Card Charges",
+      "group": "VPO",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": "2026-04-22",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716305312",
+      "name": "Ajustes parte 2 SO",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716312724",
+      "name": "CRUD Inventory Site",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-14",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716312849",
+      "name": "Ajustes en SO",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716312887",
+      "name": "Correcciones QA (cuentas) P2",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716312888",
+      "name": "CRUD Invoice",
+      "group": "Invoice",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716312914",
+      "name": "QA SO",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716312980",
+      "name": "Implementar botones conexión QuickBooks (items/productos)",
+      "group": "Productos/Items",
+      "status": "On Hold",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": true,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716319839",
+      "name": "Aplicar correcciones de cuentas en Redix",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716320700",
+      "name": "QA de cuentas",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716320761",
+      "name": "QA de cuentas (nueva ronda)",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716322340",
+      "name": "Correcciones QA (productos) P2",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716322384",
+      "name": "Correcciones QA (quotation) P2",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716326375",
+      "name": "Correcciones QA (cuentas)",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716326376",
+      "name": "Migración cuentas todas las sedes",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716329154",
+      "name": "Agregar tablas para descripción por idioma",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716329209",
+      "name": "QA Productos",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716329456",
+      "name": "Migración productos todas las sedes",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716329496",
+      "name": "Automatización descripción/marca/especificaciones",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716340949",
+      "name": "Correcciones QA (productos)",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-08",
+      "timelineEnd": "2026-04-08",
+      "dueDate": "2026-04-08",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716342098",
+      "name": "Completar migración cuentas REC",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": "2026-04-14",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716342588",
+      "name": "Implementación diseño proposal (nueva rama)",
+      "group": "Quotation",
+      "status": "Late",
+      "owners": [
+        "Michael Habib"
+      ],
+      "ownerIds": [
+        1201346
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716342626",
+      "name": "QA de Quotation",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716342650",
+      "name": "Correcciones QA (quotation)",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11716342652",
+      "name": "Revisión envío PDF a impresora",
+      "group": "Quotation",
+      "status": "Late",
+      "owners": [
+        "Michael Habib"
+      ],
+      "ownerIds": [
+        1201346
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
+      "dueDate": "2026-04-09",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720188505",
+      "name": "Correcciones de Quote",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720207261",
+      "name": "Correcciones de SO",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720372358",
+      "name": "Agregar campo para logo de organización",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720383753",
+      "name": "Creación de tabla Credit Card.",
+      "group": "VPO",
+      "status": "Late",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720481717",
+      "name": "QA de Cuentas",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720495045",
+      "name": "QA Productos",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720526529",
+      "name": "POC Unify Alarm Trigger",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11720527080",
+      "name": "Planning Redix semana del 13 al 17 de abril.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11721286844",
+      "name": "- Ejecución de migration tool (database versioning – migraciones automáticas).",
+      "group": "Control de cambios",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11721305152",
+      "name": "- Continuación ejecución plan Prisma ↔ código.",
+      "group": "Control de cambios",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11721522629",
+      "name": "Migracion de data limpia a la base de datos productiva (porque en la de desarrollo hay data falsa)",
+      "group": "General",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-10",
+      "timelineEnd": "2026-04-10",
+      "dueDate": "2026-04-10",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736907486",
+      "name": "Correcciones de Cuentas.",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736919403",
+      "name": "Integrar TOOL obtener items legacy con tool buscar part number en internet.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736923681",
+      "name": "Correcciones de Products.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736924602",
+      "name": "Correcciones de Quote.",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736935035",
+      "name": "Botón para consumir flujo de obtener items legacy en Redix.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736935842",
+      "name": "CRUD Assembly.",
+      "group": "Productos/Items",
+      "status": "Late",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736937395",
+      "name": "Creación de TOOL n8n para obtener items Legacy.",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736937778",
+      "name": "CRUD Inventory Transfer.",
+      "group": "Productos/Items",
+      "status": "Late",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736940815",
+      "name": "Quitar responsabilidades por compañía en autenticación (save automático de userauth a Redix).",
+      "group": "Security",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736955828",
+      "name": "QA Quotes. 3",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736965138",
+      "name": "Implementación módulo Oportunidades en Redix.",
+      "group": "General",
+      "status": "Working on it",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11736990158",
+      "name": "Implementación de proposal en rama develop. (pendiente desde 9 de abril)",
+      "group": "Proposal",
+      "status": "Late",
+      "owners": [
+        "Celia Giraldo",
+        "Michael Habib"
+      ],
+      "ownerIds": [
+        50034905,
+        1201346
+      ],
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": true
+    },
+    {
+      "id": "11736996168",
+      "name": "QA Productos. 3",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11737014523",
+      "name": "Ajustes POC Unify Alarm (email).",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11737038064",
+      "name": "Migración de datos nuevos a PostgreSQL: en curso REC",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-11",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11737066689",
+      "name": "Poner a funcionar en productivo el ecosistema de logs de Redix",
+      "group": "Settings",
+      "status": "Late",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745925328",
+      "name": "Refactorización de widgets",
+      "group": "Settings",
+      "status": "Blocked",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745925329",
+      "name": "Validación de tablas (SO, To Buy, PO) - P2",
+      "group": "SO",
+      "status": "Working on it",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-17",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745931534",
+      "name": "Montaje Web App migración",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745931659",
+      "name": "QA Productos y Quotes",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745931785",
+      "name": "Montaje de app con Claudia",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745934505",
+      "name": "Migración Catalogs RGI y Productos RUS",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745934785",
+      "name": "Propuesta de manejo dinámico de formularios",
+      "group": "Settings",
+      "status": "Blocked",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745934864",
+      "name": "Import de Item en Tool n8n (pendiente desde 13 de abril)",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745935045",
+      "name": "Import de Item Frontend",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745935776",
+      "name": "Validación de tablas Prisma (SO, To Buy, PO)",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745946130",
+      "name": "Items Service y Non Inventory (prioridad alta)",
+      "group": "Productos/Items",
+      "status": "Late",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-15",
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745946622",
+      "name": "Import de Item Backend",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745952145",
+      "name": "QA Productos y Quotes - 15 abril",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745952572",
+      "name": "Finalizar refactorización de widgets",
+      "group": "Settings",
+      "status": "Blocked",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11745953364",
+      "name": "Apoyo a Potte en BD",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-17",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-17",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746076947",
+      "name": "Correcciones Accounts",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746121274",
+      "name": "Corrección de errores en Quotes y SO",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746138776",
+      "name": "Preparación presentación portal",
+      "group": "Proposal",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746162155",
+      "name": "QA Accounts",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746165953",
+      "name": "Ajustes POC Unify Alarm",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746177859",
+      "name": "Envío correo de publicación",
+      "group": "Proposal",
+      "status": "On Hold",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": true,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746180226",
+      "name": "Programar reunión de presentación",
+      "group": "Proposal",
+      "status": "On Hold",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": true,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746214652",
+      "name": "Vista To Buy",
+      "group": "To Buy",
+      "status": "Working on it",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746215516",
+      "name": "Creación módulo Purchase Order",
+      "group": "VPO",
+      "status": "Late",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-17",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-17",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746226892",
+      "name": "Conexión Leads con web RBR y RMX",
+      "group": "Leads",
+      "status": "Blocked",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-17",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-17",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746228382",
+      "name": "Apoyo en BD módulo Leads",
+      "group": "Leads",
+      "status": "Blocked",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746228471",
+      "name": "BD módulo Oportunidades",
+      "group": "Leads",
+      "status": "Late",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746236117",
+      "name": "Vinculación BD Leads/Cuentas/Contactos/Oportunidades/Quotes",
+      "group": "Leads",
+      "status": "Late",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746247280",
+      "name": "Conexión Leads con web RUS y REC",
+      "group": "Leads",
+      "status": "Blocked",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746247281",
+      "name": "Generación BD módulo Leads",
+      "group": "Leads",
+      "status": "Late",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746247402",
+      "name": "Creación módulo Actividades",
+      "group": "Activities",
+      "status": "Done",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-17",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-07",
+      "completedDate": "2026-04-21",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746254073",
+      "name": "Investigación integración correo",
+      "group": "Leads",
+      "status": "Late",
+      "owners": [
+        "Natalia Martinez",
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        55381237,
+        50034905
+      ],
+      "timelineStart": "2026-04-17",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-07",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": true
+    },
+    {
+      "id": "11746257942",
+      "name": "Montaje de entorno compartido de IA",
+      "group": "Settings",
+      "status": "Late",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-17",
+      "dueDate": "2026-04-16",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746261313",
+      "name": "Propuesta BD History (Registro del valor de los campos)",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746261314",
+      "name": "Plan de trabajo propuesta BD History",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-14",
+      "timelineEnd": "2026-04-14",
+      "dueDate": "2026-04-14",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746261385",
+      "name": "Puesta en marcha plan de trabajo BD History",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-07",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746261901",
+      "name": "Propuesta BD RedixOutBox",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746267129",
+      "name": "Propuesta BD Activity Logs",
+      "group": "Settings",
+      "status": "Done",
+      "owners": [
+        "Maria Carolina"
+      ],
+      "ownerIds": [
+        89893323
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-16",
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
@@ -3133,174 +3377,20 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746285686",
-      "name": "Pruebas Playground - Vendor / SO",
-      "group": "PlayGround Quickbooks",
-      "status": "Late",
+      "id": "11746282804",
+      "name": "Plan de trabajo propuesta BD Activity Logs",
+      "group": "Settings",
+      "status": "Done",
       "owners": [
-        "Claudia Herrera"
+        "Maria Carolina"
       ],
       "ownerIds": [
-        56509783
+        89893323
       ],
       "timelineStart": "2026-04-15",
       "timelineEnd": "2026-04-15",
       "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746285423",
-      "name": "Pruebas Playground PO e Invoice",
-      "group": "PlayGround Quickbooks",
-      "status": "Working on it",
-      "owners": [
-        "Claudia Herrera"
-      ],
-      "ownerIds": [
-        56509783
-      ],
-      "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746285620",
-      "name": "Consolidado de credenciales, IDs, IPs - Playground QB",
-      "group": "PlayGround Quickbooks",
-      "status": "To Do",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746283363",
-      "name": "Procedimientos de contingencia Playground QB y máquinas conectadas",
-      "group": "PlayGround Quickbooks",
-      "status": "To Do",
-      "owners": [
-        "Luis Dominguez Marquez"
-      ],
-      "ownerIds": [
-        56420968
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706595436",
-      "name": "- Entregar máquinas virtuales a Jack para montaje productivo.",
-      "group": "Control de cambios",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11706595357",
-      "name": "- Finalizar deploy automático en productivo.",
-      "group": "Control de cambios",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-07",
-      "timelineEnd": "2026-04-07",
-      "dueDate": "2026-04-07",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11721286844",
-      "name": "- Ejecución de migration tool (database versioning – migraciones automáticas).",
-      "group": "Control de cambios",
-      "status": "Working on it",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11721305152",
-      "name": "- Continuación ejecución plan Prisma ↔ código.",
-      "group": "Control de cambios",
-      "status": "Done",
-      "owners": [
-        "Bryan Romero"
-      ],
-      "ownerIds": [
-        78618757
-      ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
+      "completedDate": "2026-04-16",
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
@@ -3331,107 +3421,195 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11721522629",
-      "name": "Migracion de data limpia a la base de datos productiva (porque en la de desarrollo hay data falsa)",
-      "group": "General",
-      "status": "Done",
+      "id": "11746283363",
+      "name": "Procedimientos de contingencia Playground QB y máquinas conectadas",
+      "group": "PlayGround Quickbooks",
+      "status": "Late",
       "owners": [
-        "Jessica Rodgers"
+        "Luis Dominguez Marquez"
       ],
       "ownerIds": [
-        56370605
+        56420968
       ],
-      "timelineStart": "2026-04-10",
-      "timelineEnd": "2026-04-10",
-      "dueDate": "2026-04-10",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11736965138",
-      "name": "Implementación módulo Oportunidades en Redix.",
-      "group": "General",
-      "status": "To Do",
-      "owners": [
-        "Natalia Martinez"
-      ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
-      "dueDate": "2026-04-13",
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
+      "isTodo": false,
+      "isLate": true,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
     {
-      "id": "11716305259",
-      "name": "Implementación módulo Leads",
-      "group": "Leads",
+      "id": "11746284767",
+      "name": "Plan de trabajo propuesta BD RedixOutBox",
+      "group": "Settings",
       "status": "Done",
       "owners": [
-        "Natalia Martinez"
+        "Maria Carolina"
       ],
       "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-09",
-      "timelineEnd": "2026-04-09",
-      "dueDate": "2026-04-09",
-      "completedDate": null,
-      "isDone": true,
-      "isWorking": false,
-      "isTodo": false,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746228382",
-      "name": "Apoyo en BD módulo Leads",
-      "group": "Leads",
-      "status": "To Do",
-      "owners": [
-        "Jessica Rodgers"
-      ],
-      "ownerIds": [
-        56370605
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
-      "isOnHold": false,
-      "hasMultipleOwners": false
-    },
-    {
-      "id": "11746247280",
-      "name": "Conexión Leads con web RUS y REC",
-      "group": "Leads",
-      "status": "Working on it",
-      "owners": [
-        "Celia Giraldo"
-      ],
-      "ownerIds": [
-        50034905
+        89893323
       ],
       "timelineStart": "2026-04-16",
       "timelineEnd": "2026-04-16",
       "dueDate": "2026-04-16",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746285423",
+      "name": "Pruebas Playground PO e Invoice",
+      "group": "PlayGround Quickbooks",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-16",
+      "timelineEnd": "2026-04-16",
+      "dueDate": "2026-04-16",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746285620",
+      "name": "Consolidado de credenciales, IDs, IPs - Playground QB",
+      "group": "PlayGround Quickbooks",
+      "status": "Late",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11746285686",
+      "name": "Pruebas Playground - Vendor / SO",
+      "group": "PlayGround Quickbooks",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-15",
+      "timelineEnd": "2026-04-15",
+      "dueDate": "2026-04-15",
+      "completedDate": "2026-04-17",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11772641782",
+      "name": "Migración de datos nuevos a PostgreSQL: en curso RBR",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-11",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11772642848",
+      "name": "Migración de datos nuevos a PostgreSQL: en curso RUS",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-11",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11772656774",
+      "name": "Migración de datos nuevos a PostgreSQL: en curso RMX",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-11",
+      "timelineEnd": "2026-04-13",
+      "dueDate": "2026-04-13",
+      "completedDate": "2026-04-20",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806333734",
+      "name": "Corrección de Build Redix",
+      "group": "Control de cambios",
+      "status": "Working on it",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
       "completedDate": null,
       "isDone": false,
       "isWorking": true,
@@ -3441,9 +3619,867 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746226892",
-      "name": "Conexión Leads con web RBR y RMX",
+      "id": "11806333735",
+      "name": "Edición de Quote para selección de compañía",
+      "group": "Quotation",
+      "status": "Done",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": "2026-04-21",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806333736",
+      "name": "Apoyo QuickBooks para replicación de SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806333737",
+      "name": "VPO Front–Back",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806333738",
+      "name": "Planteamiento y documentación de casos de uso VPO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806333739",
+      "name": "Replicación QuickBooks VPO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Bryan Romero"
+      ],
+      "ownerIds": [
+        78618757
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335931",
+      "name": "Documentación y testing módulos Leads",
       "group": "Leads",
+      "status": "To Do",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335932",
+      "name": "Creación módulo School (gestión de contenido)",
+      "group": "School",
+      "status": "To Do",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-24",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335933",
+      "name": "Pruebas Playground (Item Service, Bill, Item Non Inventory)",
+      "group": "PlayGround Quickbooks",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335934",
+      "name": "Reunión creación/edición SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335935",
+      "name": "Migración cuentas contables",
+      "group": "Accounts",
+      "status": "Done",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": "2026-04-21",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335936",
+      "name": "Plan manejo de impuestos",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335937",
+      "name": "Plan migración SO open",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335938",
+      "name": "Plan manejo templates",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806335939",
+      "name": "Apoyo QuickBooks SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336048",
+      "name": "Plan migración PO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336049",
+      "name": "Casos de uso VPO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336050",
+      "name": "Ejecución manejo de impuestos y templates",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336051",
+      "name": "Ejecución migración SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-24",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336052",
+      "name": "Ejecución migración PO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Claudia Herrera"
+      ],
+      "ownerIds": [
+        56509783
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-24",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336053",
+      "name": "Inventario de flujos n8n (dev y cloud)",
+      "group": "PlayGround Quickbooks",
+      "status": "Late",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336054",
+      "name": "Migración a n8n encolado y productivo",
+      "group": "PlayGround Quickbooks",
+      "status": "Late",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336055",
+      "name": "Manejo sesión API QuickBooks (login/logout)",
+      "group": "PlayGround Quickbooks",
+      "status": "To Do",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806336056",
+      "name": "Revisión y corrección de templates con Jessica",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-24",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806345513",
+      "name": "Reunión creación/edición SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806345514",
+      "name": "Ajustes SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806345515",
+      "name": "Replicación QuickBooks SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806345516",
+      "name": "Documentación casos de uso SO (creación/edición)",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806345518",
+      "name": "Documentación casos de uso To Buy",
+      "group": "To Buy",
+      "status": "To Do",
+      "owners": [
+        "Luis Potte Herrera"
+      ],
+      "ownerIds": [
+        56509695
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806345520",
+      "name": "Añadir funcionalidad de búsqueda por parte",
+      "group": "Productos/Items",
+      "status": "Blocked",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347774",
+      "name": "Reunión creación/edición SO",
+      "group": "SO",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": "2026-04-21",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347775",
+      "name": "Apoyo BD a Natalia",
+      "group": "Leads",
+      "status": "Done",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": "2026-04-21",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347776",
+      "name": "Plan manejo de impuestos",
+      "group": "Settings",
+      "status": "Working on it",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347777",
+      "name": "Plan migración SO open",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347778",
+      "name": "Plan manejo de templates",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": "2026-04-21",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347779",
+      "name": "Creación tablas PO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347780",
+      "name": "Plan migración PO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347781",
+      "name": "Ejecución manejo de impuestos y templates",
+      "group": "Settings",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806347782",
+      "name": "Ejecución migración SO",
+      "group": "SO",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-24",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806447412",
+      "name": "Ejecución migración PO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-24",
+      "timelineEnd": "2026-04-24",
+      "dueDate": "2026-04-24",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806447413",
+      "name": "Corrección y revisión Tool búsqueda número de parte",
+      "group": "Productos/Items",
       "status": "To Do",
       "owners": [
         "Celia Giraldo"
@@ -3451,9 +4487,242 @@
       "ownerIds": [
         50034905
       ],
-      "timelineStart": "2026-04-17",
-      "timelineEnd": "2026-04-17",
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806447414",
+      "name": "Apoyo a Diana Villamil (TPH Cámaras)",
+      "group": "General",
+      "status": "To Do",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806447415",
+      "name": "Integración plugin de correo",
+      "group": "Integrations",
+      "status": "To Do",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-22",
+      "dueDate": "2026-04-22",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806447416",
+      "name": "API Key DEV propuesta",
+      "group": "Integrations",
+      "status": "To Do",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806447417",
+      "name": "Reunión BD Oportunidades",
+      "group": "Oportunities",
+      "status": "To Do",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-20",
+      "dueDate": "2026-04-20",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11806969697",
+      "name": "Documentación y testing módulo Actividades",
+      "group": "Activities",
+      "status": "To Do",
+      "owners": [
+        "Natalia Martinez"
+      ],
+      "ownerIds": [
+        55381237
+      ],
+      "timelineStart": "2026-04-20",
+      "timelineEnd": "2026-04-23",
+      "dueDate": "2026-04-23",
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11807096795",
+      "name": "Entrega SO",
+      "group": "SO",
+      "status": "Working on it",
+      "owners": [
+        "RSI Team"
+      ],
+      "ownerIds": [],
+      "timelineStart": "2026-04-07",
+      "timelineEnd": "2026-04-24",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11807116565",
+      "name": "Entrega PO",
+      "group": "VPO",
+      "status": "To Do",
+      "owners": [
+        "RSI Team"
+      ],
+      "ownerIds": [],
+      "timelineStart": "2026-04-11",
+      "timelineEnd": "2026-04-24",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11807135731",
+      "name": "Entrega Productos",
+      "group": "Productos/Items",
+      "status": "Working on it",
+      "owners": [
+        "RSI Team"
+      ],
+      "ownerIds": [],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-24",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11807184202",
+      "name": "Entrega Cuentas",
+      "group": "Accounts",
+      "status": "Working on it",
+      "owners": [
+        "RSI Team"
+      ],
+      "ownerIds": [],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-24",
       "dueDate": "2026-04-17",
+      "completedDate": "2026-04-20",
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11807212828",
+      "name": "Entrega Quote",
+      "group": "Quotation",
+      "status": "Working on it",
+      "owners": [
+        "Celia Giraldo",
+        "RSI Team"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-06",
+      "timelineEnd": "2026-04-24",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": true
+    },
+    {
+      "id": "11807444215",
+      "name": "Entrega Innvoice",
+      "group": "Invoice",
+      "status": "To Do",
+      "owners": [
+        "RSI Team"
+      ],
+      "ownerIds": [],
+      "timelineStart": "2026-04-27",
+      "timelineEnd": "2026-05-08",
+      "dueDate": null,
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
@@ -3463,19 +4732,17 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746247281",
-      "name": "Generación BD módulo Leads",
+      "id": "11807477477",
+      "name": "Entrega Leads",
       "group": "Leads",
       "status": "To Do",
       "owners": [
-        "Natalia Martinez"
+        "RSI Team"
       ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
-      "dueDate": "2026-04-14",
+      "ownerIds": [],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-24",
+      "dueDate": null,
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
@@ -3485,19 +4752,17 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746228471",
-      "name": "BD módulo Oportunidades",
-      "group": "Leads",
+      "id": "11807496393",
+      "name": "Entrega oportunidades",
+      "group": "Oportunities",
       "status": "To Do",
       "owners": [
-        "Natalia Martinez"
+        "RSI Team"
       ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-15",
+      "ownerIds": [],
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-29",
+      "dueDate": null,
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
@@ -3507,19 +4772,37 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746236117",
-      "name": "Vinculación BD Leads/Cuentas/Contactos/Oportunidades/Quotes",
-      "group": "Leads",
+      "id": "11807509639",
+      "name": "Entrega School",
+      "group": "School",
       "status": "To Do",
       "owners": [
-        "Natalia Martinez"
+        "RSI Team"
       ],
-      "ownerIds": [
-        55381237
+      "ownerIds": [],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-05-08",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11807572598",
+      "name": "Entrega To Buy",
+      "group": "To Buy",
+      "status": "To Do",
+      "owners": [
+        "RSI Team"
       ],
+      "ownerIds": [],
       "timelineStart": "2026-04-16",
-      "timelineEnd": "2026-04-16",
-      "dueDate": "2026-04-16",
+      "timelineEnd": "2026-04-24",
+      "dueDate": null,
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
@@ -3529,19 +4812,17 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746254073",
-      "name": "Investigación integración correo",
-      "group": "Leads",
+      "id": "11810189659",
+      "name": "Entrega Activities",
+      "group": "Activities",
       "status": "To Do",
       "owners": [
-        "Natalia Martinez"
+        "RSI Team"
       ],
-      "ownerIds": [
-        55381237
-      ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-07",
+      "ownerIds": [],
+      "timelineStart": "2026-04-29",
+      "timelineEnd": "2026-05-06",
+      "dueDate": null,
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
@@ -3551,23 +4832,45 @@
       "hasMultipleOwners": false
     },
     {
-      "id": "11746247402",
-      "name": "Creación módulo Actividades",
-      "group": "Leads",
-      "status": "To Do",
+      "id": "11812070079",
+      "name": "Correcion de cuentas duplicadas",
+      "group": "Productos/Items",
+      "status": "Working on it",
       "owners": [
-        "Natalia Martinez"
+        "Jessica Rodgers"
       ],
       "ownerIds": [
-        55381237
+        56370605
       ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
-      "dueDate": "2026-04-07",
+      "timelineStart": "2026-04-21",
+      "timelineEnd": "2026-04-21",
+      "dueDate": null,
       "completedDate": null,
       "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
+      "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11829204535",
+      "name": "Correction de bugs Modulo Products",
+      "group": "Productos/Items",
+      "status": "Working on it",
+      "owners": [
+        "Jessica Rodgers"
+      ],
+      "ownerIds": [
+        56370605
+      ],
+      "timelineStart": "2026-04-22",
+      "timelineEnd": "2026-04-23",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
