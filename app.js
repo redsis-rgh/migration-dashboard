@@ -624,10 +624,12 @@ function switchView(view) {
 }
 
 const TeamDashboard = (function() {
+  var MONDAY_SYNC_URL = 'https://n8n-development.redsis.ai/webhook/redix/monday-sync';
   var boardData = null;
   var cachedStats = null;
   var currentFilter = 'all';
   var currentSort = 'workload';
+  var syncInFlight = false;
 
   function getChartWidth(canvas, fallbackWidth) {
     var parentWidth = canvas && canvas.parentElement ? canvas.parentElement.clientWidth : 0;
@@ -668,6 +670,54 @@ const TeamDashboard = (function() {
     if (!dateStr) return null;
     var dt = new Date(dateStr + 'T00:00:00');
     return Number.isNaN(dt.getTime()) ? null : dt;
+  }
+
+  function setSyncStatus(message, tone) {
+    var statusEl = document.getElementById('team-sync-status');
+    if (!statusEl) return;
+    statusEl.className = 'tm-sync-status' + (tone ? ' ' + tone : '');
+    statusEl.textContent = message;
+  }
+
+  function setSyncButtonState(isBusy) {
+    syncInFlight = isBusy;
+    var button = document.getElementById('team-sync-btn');
+    if (!button) return;
+    button.disabled = isBusy;
+    button.textContent = isBusy ? 'Syncing...' : 'Sync Monday';
+  }
+
+  async function fetchTeamSnapshot(cacheBust) {
+    var url = 'team-data.json' + (cacheBust ? '?v=' + Date.now() : '');
+    var teamRes = await fetch(url, { cache: 'no-store' });
+    if (!teamRes.ok) {
+      throw new Error('team-data.json returned ' + teamRes.status);
+    }
+    return await teamRes.json();
+  }
+
+  async function waitForPublishedSync(previousSyncedAt, expectedSyncedAt) {
+    var expectedMs = expectedSyncedAt ? Date.parse(expectedSyncedAt) : NaN;
+    var previousMs = previousSyncedAt ? Date.parse(previousSyncedAt) : NaN;
+
+    for (var attempt = 0; attempt < 12; attempt++) {
+      if (attempt > 0) {
+        await new Promise(function(resolve) { setTimeout(resolve, 5000); });
+      }
+      try {
+        var latest = await fetchTeamSnapshot(true);
+        var latestMs = latest && latest.syncedAt ? Date.parse(latest.syncedAt) : NaN;
+        var isNewerThanPrevious = !Number.isNaN(latestMs) && (Number.isNaN(previousMs) || latestMs > previousMs);
+        var reachedExpected = !Number.isNaN(latestMs) && !Number.isNaN(expectedMs) && latestMs >= expectedMs;
+        if (reachedExpected || isNewerThanPrevious) {
+          loadData(latest);
+          return true;
+        }
+      } catch (err) {
+        console.warn('Waiting for published team-data.json failed:', err);
+      }
+    }
+    return false;
   }
 
   function loadData(data) {
@@ -834,6 +884,45 @@ const TeamDashboard = (function() {
     if (trend) trend.style.display = 'none';
     setText('team-footer-date', syncLabel);
     filterTasks(currentFilter);
+  }
+
+  async function syncData() {
+    if (syncInFlight) return;
+
+    var previousSyncedAt = cachedStats ? cachedStats.syncedAt : null;
+    setSyncButtonState(true);
+    setSyncStatus('Syncing Monday board and waiting for GitHub Pages...', 'loading');
+
+    try {
+      var response = await fetch(MONDAY_SYNC_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ source: 'manual-button', force: true })
+      });
+
+      var rawBody = await response.text();
+      var result = rawBody ? JSON.parse(rawBody) : null;
+      if (!response.ok || !result.ok) {
+        throw new Error(result && result.message ? result.message : 'Sync failed or returned an empty response');
+      }
+
+      setSyncStatus('Sync finished in backend. Waiting for published JSON...', 'loading');
+      var published = await waitForPublishedSync(previousSyncedAt, result.syncedAt);
+
+      if (published) {
+        setSyncStatus('Synced successfully. ' + (result.itemCount ? formatNumber(result.itemCount) + ' items refreshed.' : 'Dashboard updated.'), 'success');
+      } else {
+        setSyncStatus('Backend sync completed, but GitHub Pages has not published the new JSON yet. Refresh again in a moment.', 'loading');
+      }
+    } catch (err) {
+      console.error('Monday sync failed:', err);
+      setSyncStatus('Sync failed: ' + err.message, 'error');
+    } finally {
+      setSyncButtonState(false);
+      if (document.getElementById('team-view') && document.getElementById('team-view').style.display !== 'none') {
+        refresh();
+      }
+    }
   }
 
   function renderKPIs(st) {
@@ -1177,7 +1266,12 @@ const TeamDashboard = (function() {
     refresh: function() {
       if (!cachedStats) return;
       renderCharts(cachedStats);
-    }
+    },
+    loadLatest: async function() {
+      var latest = await fetchTeamSnapshot(true);
+      loadData(latest);
+    },
+    syncData: syncData
   };
 })();
 // ── Bootstrap ─────────────────────────────────
@@ -1202,9 +1296,7 @@ const TeamDashboard = (function() {
 
     // ── Team dashboard ──
     try {
-      const teamRes = await fetch('team-data.json');
-      const teamReports = await teamRes.json();
-      TeamDashboard.loadData(teamReports);
+      await TeamDashboard.loadLatest();
     } catch (e) {
       console.warn('team-data.json not loaded:', e);
     }

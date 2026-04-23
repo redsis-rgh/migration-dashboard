@@ -359,13 +359,27 @@
       --tm-red-bg: #fee2e2;
     }
 
-    .tm-page-header { margin-bottom: 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+    .tm-page-header { margin-bottom: 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
     .tm-page-header-left h1 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 22px; font-weight: 700;
       color: var(--text-primary); letter-spacing: -0.3px;
     }
     .tm-page-header-left p { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+    .tm-page-header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      min-width: 280px;
+    }
+    .tm-header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
     .tm-date-selector {
       font-size: 12px;
       padding: 6px 12px;
@@ -376,6 +390,36 @@
       cursor: pointer;
       font-weight: 500;
     }
+    .tm-sync-btn {
+      padding: 8px 14px;
+      border: 1px solid var(--success);
+      background: var(--success);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      transition: 0.2s;
+      box-shadow: var(--shadow-card);
+    }
+    .tm-sync-btn:hover:not(:disabled) {
+      background: #047857;
+      border-color: #047857;
+    }
+    .tm-sync-btn:disabled {
+      cursor: wait;
+      opacity: 0.7;
+    }
+    .tm-sync-status {
+      font-size: 12px;
+      color: var(--text-secondary);
+      min-height: 18px;
+      text-align: right;
+    }
+    .tm-sync-status.success { color: var(--success); }
+    .tm-sync-status.error { color: var(--danger); }
+    .tm-sync-status.loading { color: var(--warning); }
 
     .tm-kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 24px; }
     .tm-kpi {
@@ -837,6 +881,9 @@
       .tm-kpi-grid  { grid-template-columns: repeat(3, 1fr); }
       .tm-charts-grid { grid-template-columns: 1fr; }
       .tm-persons-container { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+      .tm-page-header { flex-direction: column; }
+      .tm-page-header-right { width: 100%; align-items: flex-start; min-width: 0; }
+      .tm-header-actions { justify-content: flex-start; }
     }
     @media (max-width: 600px) {
       .stats-grid  { grid-template-columns: 1fr 1fr; }
@@ -849,6 +896,9 @@
       .view-tabs { padding: 0 16px; }
       .topbar { padding: 0 16px; }
       .main { padding: 20px 16px 40px; }
+      .tm-header-actions { width: 100%; }
+      .tm-date-selector, .tm-sync-btn { width: 100%; }
+      .tm-sync-status { text-align: left; }
     }
     @media print {
       body { background: white; }
@@ -1095,9 +1145,15 @@
         <h1>Monday Board Performance</h1>
         <p>KPIs y carga del equipo basados directamente en el board Redix Portal de Monday</p>
       </div>
-      <select id="team-date-select" class="tm-date-selector">
-        <option value="">Syncing Monday board...</option>
-      </select>
+      <div class="tm-page-header-right">
+        <div class="tm-header-actions">
+          <select id="team-date-select" class="tm-date-selector">
+            <option value="">Syncing Monday board...</option>
+          </select>
+          <button id="team-sync-btn" class="tm-sync-btn" onclick="syncTeamData()">Sync Monday</button>
+        </div>
+        <div id="team-sync-status" class="tm-sync-status">Waiting for sync.</div>
+      </div>
     </div>
 
     <!-- KPI GRID -->
@@ -1248,6 +1304,10 @@
   function filterTeamPersons() {
     const query = document.getElementById('team-search').value;
     TeamDashboard.filterBySearch(query);
+  }
+
+  function syncTeamData() {
+    TeamDashboard.syncData();
   }
 </script>
 </body>
