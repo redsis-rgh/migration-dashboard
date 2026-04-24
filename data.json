@@ -67,8 +67,8 @@
   "products": {
     "summary": {
       "targetTotal": 681634,
-      "migrated": 9120,
-      "active": 9120,
+      "migrated": 204908,
+      "active": 204908,
       "sourceLabel": "Current in redix_core",
       "note": "Migrated products are mixed in the new database and cannot be split by source company."
     },
@@ -94,8 +94,8 @@
   "photos": {
     "summary": {
       "targetTotal": 664526,
-      "migrated": 13892,
-      "active": 13892,
+      "migrated": 176266,
+      "active": 176266,
       "sourceLabel": "Current in redix_core",
       "note": "Migrated photo records are mixed in the new database and cannot be split by source company."
     },
@@ -191,8 +191,8 @@
     "RMX": null,
     "RBR": null
   },
-  "syncedAt": "2026-04-24T16:11:18.224Z",
+  "syncedAt": "2026-04-24T16:14:43.283Z",
   "accounts": {
-    "totalLive": 85
+    "totalLive": 5314
   }
 }
