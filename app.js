@@ -152,6 +152,127 @@ function renderProgressBar(pct, color) {
     </div>`;
 }
 
+let migrationDataCache = null;
+let migrationSyncInFlight = false;
+const MIGRATION_SYNC_URL = 'https://n8n-development.redsis.ai/webhook/redix/migration-sync';
+
+function getMigrationSyncMarker(data) {
+  if (!data || typeof data !== 'object') return '';
+  return String(data.syncedAt || data.reportDate || '');
+}
+
+function setMigrationSyncStatus(message, tone) {
+  const statusEl = document.getElementById('migration-sync-status');
+  if (!statusEl) return;
+  statusEl.className = 'tm-sync-status' + (tone ? ' ' + tone : '');
+  statusEl.textContent = message;
+}
+
+function setMigrationSyncButtonState(isBusy) {
+  migrationSyncInFlight = isBusy;
+  const button = document.getElementById('migration-sync-btn');
+  if (!button) return;
+  button.disabled = isBusy;
+  button.textContent = isBusy ? 'Syncing...' : 'Sync DB';
+}
+
+async function fetchMigrationSnapshot(cacheBust) {
+  const url = 'data.json' + (cacheBust ? '?v=' + Date.now() : '');
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('data.json returned ' + res.status);
+  }
+  return await res.json();
+}
+
+function loadMigrationData(data) {
+  if (!data || !data.stats) {
+    console.warn('Unexpected Migration Report data shape:', data);
+    return;
+  }
+
+  migrationDataCache = data;
+  setText('report-date', data.reportDate || '—');
+  setText('footer-date', data.reportDate || '—');
+
+  renderStats(data);
+  renderProgressBreakdown(data);
+  renderMigrationItems(data.migrationItems || []);
+  renderProducts(data.products || {});
+  renderPhotos(data.photos || {});
+  renderStorage(data.storage || {});
+  renderClients(data.clients || {});
+  renderVendors(data.vendors || {});
+  renderContacts(data.contacts || {});
+  renderOrders(data.orders || {});
+}
+
+async function waitForPublishedMigrationSync(previousData, expectedSyncedAt) {
+  const previousMarker = getMigrationSyncMarker(previousData);
+  const previousSyncedMs = previousData && previousData.syncedAt ? Date.parse(previousData.syncedAt) : NaN;
+  const expectedMs = expectedSyncedAt ? Date.parse(expectedSyncedAt) : NaN;
+
+  for (let attempt = 0; attempt < 12; attempt++) {
+    if (attempt > 0) {
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+    }
+
+    try {
+      const latest = await fetchMigrationSnapshot(true);
+      const latestMarker = getMigrationSyncMarker(latest);
+      const latestSyncedMs = latest && latest.syncedAt ? Date.parse(latest.syncedAt) : NaN;
+      const markerChanged = !!latestMarker && latestMarker !== previousMarker;
+      const reachedExpected = !Number.isNaN(latestSyncedMs) && !Number.isNaN(expectedMs) && latestSyncedMs >= expectedMs;
+      const isNewerThanPrevious = !Number.isNaN(latestSyncedMs) && (Number.isNaN(previousSyncedMs) || latestSyncedMs > previousSyncedMs);
+
+      if (reachedExpected || isNewerThanPrevious || markerChanged) {
+        loadMigrationData(latest);
+        return true;
+      }
+    } catch (err) {
+      console.warn('Waiting for published data.json failed:', err);
+    }
+  }
+
+  return false;
+}
+
+async function syncMigrationData() {
+  if (migrationSyncInFlight) return;
+
+  const previousData = migrationDataCache;
+  setMigrationSyncButtonState(true);
+  setMigrationSyncStatus('Syncing... database counts and waiting for GitHub Pages...', 'loading');
+
+  try {
+    const response = await fetch(MIGRATION_SYNC_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'manual-button', force: true })
+    });
+
+    const rawBody = await response.text();
+    const result = rawBody ? JSON.parse(rawBody) : null;
+    if (!response.ok || !result || !result.ok) {
+      throw new Error(result && result.message ? result.message : 'Sync failed or returned an empty response');
+    }
+
+    setMigrationSyncStatus('Syncing... backend finished, waiting for published JSON...', 'loading');
+    const published = await waitForPublishedMigrationSync(previousData, result.syncedAt);
+
+    if (published) {
+      setMigrationSyncStatus('Synced ✓ Dashboard updated with live DB counts.', 'success');
+    } else {
+      setMigrationSyncStatus('Syncing... backend completed, but GitHub Pages has not published the new JSON yet.', 'loading');
+    }
+  } catch (err) {
+    console.error('Migration sync failed:', err);
+    setMigrationSyncStatus('Error: ' + err.message, 'error');
+  } finally {
+    setMigrationSyncButtonState(false);
+  }
+}
+
 // ── Stats ─────────────────────────────────────
 function renderStats(data) {
   const { totalItems, completed, inProgress, pending } = data.stats;
@@ -794,6 +915,9 @@ const TeamDashboard = (function() {
             collaborative: 0,
             progress: 0,
             open: 0,
+            oldestLateDate: null,
+            oldestLateLabel: null,
+            oldestLateDays: null,
             items: []
           };
         }
@@ -807,6 +931,14 @@ const TeamDashboard = (function() {
         if (item.isOverdue) s.overdue++;
         if (item.isBlocked) s.blocked++;
         if (item.hasMultipleOwners) s.collaborative++;
+        if (item.isLate && item.effectiveDue) {
+          if (!s.oldestLateDate || item.effectiveDue < s.oldestLateDate) {
+            s.oldestLateDate = item.effectiveDue;
+            s.oldestLateLabel = item.name;
+            var oldestLateDate = parseDate(item.effectiveDue);
+            s.oldestLateDays = oldestLateDate ? Math.max(Math.round((today - oldestLateDate) / 86400000), 0) : null;
+          }
+        }
         s.items.push(item);
         s.open = s.total - s.done;
         s.progress = s.total ? Math.round(s.done / s.total * 100) : 0;
@@ -835,6 +967,27 @@ const TeamDashboard = (function() {
 
     var maxLoad = ownerEntries.slice().sort(function(a, b) { return b[1].open - a[1].open; })[0] || ['—', { open: 0 }];
     var mostBlocked = ownerEntries.slice().sort(function(a, b) { return b[1].blocked - a[1].blocked; })[0] || ['—', { blocked: 0 }];
+    var mostLate = ownerEntries.slice().sort(function(a, b) {
+      return b[1].late - a[1].late;
+    })[0] || ['—', { late: 0 }];
+    var mostLateCount = mostLate[1].late;
+    var mostLateLeaders = ownerEntries.filter(function(entry) {
+      return entry[1].late === mostLateCount;
+    }).map(function(entry) { return entry[0]; });
+    var topOverdueOwners = ownerEntries.slice()
+      .filter(function(entry) { return entry[1].overdue > 0; })
+      .sort(function(a, b) {
+        if (b[1].overdue !== a[1].overdue) return b[1].overdue - a[1].overdue;
+        return b[1].open - a[1].open;
+      })
+      .slice(0, 5);
+    var longestLateOwners = ownerEntries.slice()
+      .filter(function(entry) { return !!entry[1].oldestLateDate; })
+      .sort(function(a, b) {
+        if (a[1].oldestLateDate !== b[1].oldestLateDate) return a[1].oldestLateDate.localeCompare(b[1].oldestLateDate);
+        return b[1].late - a[1].late;
+      })
+      .slice(0, 5);
     var bestProgress = ownerEntries.slice().filter(function(e) { return e[1].total > 0; })
       .sort(function(a, b) { return b[1].progress - a[1].progress; })[0] || ['—', { progress: 0 }];
 
@@ -857,6 +1010,11 @@ const TeamDashboard = (function() {
       moduleCount: groupEntries.length,
       maxLoad: maxLoad,
       mostBlocked: mostBlocked,
+      mostLate: mostLate,
+      mostLateCount: mostLateCount,
+      mostLateLeaders: mostLateLeaders,
+      topOverdueOwners: topOverdueOwners,
+      longestLateOwners: longestLateOwners,
       bestProgress: bestProgress,
       overdueItems: overdueItems,
       dueSoonItems: dueSoonItems
@@ -874,6 +1032,7 @@ const TeamDashboard = (function() {
     renderKPIs(cachedStats);
     renderPersons(cachedStats, currentSort);
     renderCharts(cachedStats);
+    renderOwnerRankings(cachedStats);
     renderModules(cachedStats);
     renderFocus(cachedStats);
     renderExecutiveSummary(cachedStats);
@@ -926,14 +1085,20 @@ const TeamDashboard = (function() {
   }
 
   function renderKPIs(st) {
+    var mostLateSub = formatNumber(st.mostLateCount) + ' in status Late';
+    if (st.mostLateLeaders.length > 1 && st.mostLateCount > 0) {
+      mostLateSub += ' · tie +' + (st.mostLateLeaders.length - 1);
+    }
+
     var kpis = [
       { label: 'Board Items', value: formatNumber(st.totalItems), sub: st.board.name, cls: '' },
       { label: 'Done', value: formatNumber(st.done), sub: st.progress + '% completed', cls: 'green' },
       { label: 'Working', value: formatNumber(st.working), sub: formatNumber(st.open) + ' still open', cls: 'yellow' },
-      { label: 'Blocked', value: formatNumber(st.late + st.onHold), sub: formatNumber(st.overdueItems.length) + ' overdue by date', cls: 'red' },
+      { label: 'Late / On Hold', value: formatNumber(st.late + st.onHold), sub: formatNumber(st.overdueItems.length) + ' overdue by date', cls: 'red' },
       { label: 'To Do', value: formatNumber(st.todo), sub: 'not started yet', cls: '' },
       { label: 'Owners', value: formatNumber(st.activeOwners), sub: 'people with assignments', cls: '' },
       { label: 'Top Workload', value: shortName(st.maxLoad[0]), sub: formatNumber(st.maxLoad[1].open) + ' open items', cls: st.maxLoad[1].open > 6 ? 'red' : 'yellow' },
+      { label: 'Most Late', value: shortName(st.mostLate[0]), sub: mostLateSub, cls: st.mostLateCount ? 'red' : '' },
       { label: 'Best Progress', value: shortName(st.bestProgress[0]), sub: st.bestProgress[1].progress + '% done', cls: 'green' },
       { label: 'Modules', value: formatNumber(st.moduleCount), sub: st.groupEntries[0] ? 'largest: ' + st.groupEntries[0].name : 'no groups', cls: '' },
       { label: 'Most Blocked', value: shortName(st.mostBlocked[0]), sub: formatNumber(st.mostBlocked[1].blocked) + ' blocked / overdue', cls: st.mostBlocked[1].blocked ? 'red' : '' }
@@ -1127,6 +1292,49 @@ const TeamDashboard = (function() {
     drawGroupProgressChart(st);
   }
 
+  function renderOwnerRankings(st) {
+    var overdueHTML = st.topOverdueOwners.length
+      ? '<ol class="tm-ranking-list">' + st.topOverdueOwners.map(function(pair, idx) {
+          var owner = pair[0];
+          var data = pair[1];
+          return '<li class="tm-ranking-item">' +
+            '<div class="tm-ranking-rank">' + (idx + 1) + '</div>' +
+            '<div class="tm-ranking-copy">' +
+              '<div class="tm-ranking-title">' + owner + '</div>' +
+              '<div class="tm-ranking-sub">' + formatNumber(data.overdue) + ' overdue by date · ' + formatNumber(data.open) + ' open</div>' +
+            '</div>' +
+            '<div class="tm-ranking-value">' + formatNumber(data.overdue) + '</div>' +
+          '</li>';
+        }).join('') + '</ol>'
+      : '<div class="tm-ranking-empty">No overdue items by date on the board.</div>';
+
+    var longestLateHTML = st.longestLateOwners.length
+      ? '<ol class="tm-ranking-list">' + st.longestLateOwners.map(function(pair, idx) {
+          var owner = pair[0];
+          var data = pair[1];
+          var dayLabel = data.oldestLateDays === 1 ? '1 day in Late' : formatNumber(data.oldestLateDays) + ' days in Late';
+          return '<li class="tm-ranking-item">' +
+            '<div class="tm-ranking-rank">' + (idx + 1) + '</div>' +
+            '<div class="tm-ranking-copy">' +
+              '<div class="tm-ranking-title">' + owner + '</div>' +
+              '<div class="tm-ranking-sub">Oldest Late since ' + data.oldestLateDate + ' · ' + dayLabel + '</div>' +
+            '</div>' +
+            '<div class="tm-ranking-value">' + formatNumber(data.oldestLateDays) + 'd</div>' +
+          '</li>';
+        }).join('') + '</ol>'
+      : '<div class="tm-ranking-empty">No items currently in status Late with a due date.</div>';
+
+    setHTML('team-overdue-ranking',
+      '<h3>Top Overdue By Date</h3>' +
+      '<p class="tm-ranking-note">Derived metric: items past due date, even if Monday status is not <strong>Late</strong>.</p>' +
+      overdueHTML);
+
+    setHTML('team-longest-late-ranking',
+      '<h3>Longest In Status Late</h3>' +
+      '<p class="tm-ranking-note">Monday status metric: earliest due date among items currently in <strong>Late</strong>.</p>' +
+      longestLateHTML);
+  }
+
   function renderModules(st) {
     var modules = st.groupEntries.map(function(group) {
       return '<div class="tm-card" style="padding:14px 16px">' +
@@ -1277,22 +1485,8 @@ const TeamDashboard = (function() {
 // ── Bootstrap ─────────────────────────────────
 (async function init() {
   try {
-    const res  = await fetch('data.json');
-    const data = await res.json();
-
-    setText('report-date', data.reportDate);
-    setText('footer-date', data.reportDate);
-
-    renderStats(data);
-    renderProgressBreakdown(data);
-    renderMigrationItems(data.migrationItems);
-    renderProducts(data.products);
-    renderPhotos(data.photos);
-    renderStorage(data.storage);
-    renderClients(data.clients);
-    renderVendors(data.vendors);
-    renderContacts(data.contacts);
-    renderOrders(data.orders);
+    const data = await fetchMigrationSnapshot(false);
+    loadMigrationData(data);
 
     // ── Team dashboard ──
     try {
