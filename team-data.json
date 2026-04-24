@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-23T17:43:58.910Z",
+  "syncedAt": "2026-04-24T14:31:47.633Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -1315,8 +1315,8 @@
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-12",
-      "timelineEnd": "2026-04-13",
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
       "dueDate": "2026-04-09",
       "completedDate": "2026-04-13",
       "isDone": true,
@@ -1403,8 +1403,8 @@
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-14",
+      "timelineStart": "2026-04-09",
+      "timelineEnd": "2026-04-09",
       "dueDate": "2026-04-13",
       "completedDate": "2026-04-14",
       "isDone": true,
@@ -2261,8 +2261,8 @@
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-24",
-      "timelineEnd": "2026-04-24",
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
       "dueDate": "2026-04-13",
       "completedDate": null,
       "isDone": false,
@@ -2305,8 +2305,8 @@
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-23",
-      "timelineEnd": "2026-04-23",
+      "timelineStart": "2026-04-13",
+      "timelineEnd": "2026-04-13",
       "dueDate": "2026-04-13",
       "completedDate": null,
       "isDone": false,
@@ -2726,7 +2726,7 @@
         56420968
       ],
       "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-15",
+      "timelineEnd": "2026-04-14",
       "dueDate": "2026-04-14",
       "completedDate": "2026-04-15",
       "isDone": false,
@@ -4694,12 +4694,9 @@
       "group": "Quotation",
       "status": "Working on it",
       "owners": [
-        "Celia Giraldo",
         "RSI Team"
       ],
-      "ownerIds": [
-        50034905
-      ],
+      "ownerIds": [],
       "timelineStart": "2026-04-06",
       "timelineEnd": "2026-04-24",
       "dueDate": null,
@@ -4709,7 +4706,7 @@
       "isTodo": false,
       "isLate": false,
       "isOnHold": false,
-      "hasMultipleOwners": true
+      "hasMultipleOwners": false
     },
     {
       "id": "11807444215",
