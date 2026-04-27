@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-27T14:01:07.414Z",
+  "syncedAt": "2026-04-27T17:05:54.883Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -1682,7 +1682,7 @@
       "id": "11716329154",
       "name": "Agregar tablas para descripción por idioma",
       "group": "Settings",
-      "status": "To Do",
+      "status": "Working on it",
       "owners": [
         "Jessica Rodgers"
       ],
@@ -1694,8 +1694,8 @@
       "dueDate": "2026-04-08",
       "completedDate": null,
       "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
+      "isWorking": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -2388,11 +2388,9 @@
       "group": "Proposal",
       "status": "Late",
       "owners": [
-        "Celia Giraldo",
         "Michael Habib"
       ],
       "ownerIds": [
-        50034905,
         1201346
       ],
       "timelineStart": "2026-04-09",
@@ -2404,7 +2402,7 @@
       "isTodo": false,
       "isLate": true,
       "isOnHold": false,
-      "hasMultipleOwners": true
+      "hasMultipleOwners": false
     },
     {
       "id": "11736996168",
@@ -3864,7 +3862,7 @@
       "id": "11806335937",
       "name": "Plan migración SO open",
       "group": "SO",
-      "status": "To Do",
+      "status": "Working on it",
       "owners": [
         "Claudia Herrera"
       ],
@@ -3876,8 +3874,8 @@
       "dueDate": "2026-04-21",
       "completedDate": null,
       "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
+      "isWorking": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -4304,7 +4302,7 @@
       "id": "11806347776",
       "name": "Plan manejo de impuestos",
       "group": "Settings",
-      "status": "Working on it",
+      "status": "On Hold",
       "owners": [
         "Jessica Rodgers"
       ],
@@ -4316,10 +4314,10 @@
       "dueDate": "2026-04-21",
       "completedDate": null,
       "isDone": false,
-      "isWorking": true,
+      "isWorking": false,
       "isTodo": false,
       "isLate": false,
-      "isOnHold": false,
+      "isOnHold": true,
       "hasMultipleOwners": false
     },
     {
