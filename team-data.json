@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-24T20:29:01.822Z",
+  "syncedAt": "2026-04-27T14:01:07.414Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -1044,7 +1044,7 @@
       "id": "11707106087",
       "name": "- Ejecución de visibilidad de módulos.",
       "group": "Settings",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Bryan Romero"
       ],
@@ -1054,11 +1054,11 @@
       "timelineStart": "2026-04-08",
       "timelineEnd": "2026-04-13",
       "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-24",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -2298,21 +2298,21 @@
       "id": "11736937778",
       "name": "CRUD Inventory Transfer.",
       "group": "Productos/Items",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-24",
       "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-24",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -3600,7 +3600,7 @@
       "id": "11806333734",
       "name": "Corrección de Build Redix",
       "group": "Control de cambios",
-      "status": "Working on it",
+      "status": "Done",
       "owners": [
         "Bryan Romero"
       ],
@@ -3610,9 +3610,9 @@
       "timelineStart": "2026-04-20",
       "timelineEnd": "2026-04-20",
       "dueDate": "2026-04-20",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
+      "completedDate": "2026-04-24",
+      "isDone": true,
+      "isWorking": false,
       "isTodo": false,
       "isLate": false,
       "isOnHold": false,
@@ -3644,7 +3644,7 @@
       "id": "11806333736",
       "name": "Apoyo QuickBooks para replicación de SO",
       "group": "SO",
-      "status": "To Do",
+      "status": "On Hold",
       "owners": [
         "Bryan Romero"
       ],
@@ -3657,16 +3657,16 @@
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
-      "isTodo": true,
+      "isTodo": false,
       "isLate": false,
-      "isOnHold": false,
+      "isOnHold": true,
       "hasMultipleOwners": false
     },
     {
       "id": "11806333737",
       "name": "VPO Front–Back",
       "group": "VPO",
-      "status": "To Do",
+      "status": "Done",
       "owners": [
         "Bryan Romero"
       ],
@@ -3676,10 +3676,10 @@
       "timelineStart": "2026-04-21",
       "timelineEnd": "2026-04-21",
       "dueDate": "2026-04-22",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-24",
+      "isDone": true,
       "isWorking": false,
-      "isTodo": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -3688,7 +3688,7 @@
       "id": "11806333738",
       "name": "Planteamiento y documentación de casos de uso VPO",
       "group": "VPO",
-      "status": "To Do",
+      "status": "Late",
       "owners": [
         "Bryan Romero"
       ],
@@ -3701,8 +3701,8 @@
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
+      "isTodo": false,
+      "isLate": true,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -3710,7 +3710,7 @@
       "id": "11806333739",
       "name": "Replicación QuickBooks VPO",
       "group": "VPO",
-      "status": "To Do",
+      "status": "Late",
       "owners": [
         "Bryan Romero"
       ],
@@ -3723,8 +3723,8 @@
       "completedDate": null,
       "isDone": false,
       "isWorking": false,
-      "isTodo": true,
-      "isLate": false,
+      "isTodo": false,
+      "isLate": true,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -3754,7 +3754,7 @@
       "id": "11806335932",
       "name": "Creación módulo School (gestión de contenido)",
       "group": "Academy",
-      "status": "Working on it",
+      "status": "Done",
       "owners": [
         "Celia Giraldo"
       ],
@@ -3764,9 +3764,9 @@
       "timelineStart": "2026-04-24",
       "timelineEnd": "2026-04-24",
       "dueDate": "2026-04-24",
-      "completedDate": null,
-      "isDone": false,
-      "isWorking": true,
+      "completedDate": "2026-04-24",
+      "isDone": true,
+      "isWorking": false,
       "isTodo": false,
       "isLate": false,
       "isOnHold": false,
@@ -3776,7 +3776,7 @@
       "id": "11806335933",
       "name": "Pruebas Playground (Item Service, Bill, Item Non Inventory)",
       "group": "PlayGround Quickbooks",
-      "status": "To Do",
+      "status": "Done",
       "owners": [
         "Claudia Herrera"
       ],
@@ -3786,10 +3786,10 @@
       "timelineStart": "2026-04-20",
       "timelineEnd": "2026-04-20",
       "dueDate": "2026-04-20",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-27",
+      "isDone": true,
       "isWorking": false,
-      "isTodo": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -3798,7 +3798,7 @@
       "id": "11806335934",
       "name": "Reunión creación/edición SO",
       "group": "SO",
-      "status": "To Do",
+      "status": "Working on it",
       "owners": [
         "Claudia Herrera"
       ],
@@ -3810,8 +3810,8 @@
       "dueDate": "2026-04-20",
       "completedDate": null,
       "isDone": false,
-      "isWorking": false,
-      "isTodo": true,
+      "isWorking": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -4502,7 +4502,7 @@
       "id": "11806447414",
       "name": "Apoyo a Diana Villamil (TPH Cámaras)",
       "group": "General",
-      "status": "To Do",
+      "status": "Done",
       "owners": [
         "Celia Giraldo"
       ],
@@ -4512,10 +4512,10 @@
       "timelineStart": "2026-04-20",
       "timelineEnd": "2026-04-20",
       "dueDate": "2026-04-20",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-04-24",
+      "isDone": true,
       "isWorking": false,
-      "isTodo": true,
+      "isTodo": false,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
@@ -4867,6 +4867,28 @@
       "completedDate": null,
       "isDone": false,
       "isWorking": true,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11845340852",
+      "name": "Integracion Wordpress Plugin instalable",
+      "group": "Integrations",
+      "status": "Done",
+      "owners": [
+        "Celia Giraldo"
+      ],
+      "ownerIds": [
+        50034905
+      ],
+      "timelineStart": "2026-04-23",
+      "timelineEnd": "2026-04-23",
+      "dueDate": null,
+      "completedDate": "2026-04-24",
+      "isDone": true,
+      "isWorking": false,
       "isTodo": false,
       "isLate": false,
       "isOnHold": false,
