@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-04-27T18:01:05.364Z",
+  "syncedAt": "2026-04-29T19:32:20.432Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -2716,21 +2716,21 @@
       "id": "11745946130",
       "name": "Items Service y Non Inventory (prioridad alta)",
       "group": "Productos/Items",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-14",
-      "timelineEnd": "2026-04-14",
+      "timelineStart": "2026-04-28",
+      "timelineEnd": "2026-04-28",
       "dueDate": "2026-04-14",
-      "completedDate": "2026-04-15",
-      "isDone": false,
+      "completedDate": "2026-04-28",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -4888,6 +4888,28 @@
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11879963158",
+      "name": "Habilitación sedes TSI · RRC — QB Playground",
+      "group": "PlayGround Quickbooks",
+      "status": "To Do",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": null,
+      "timelineEnd": null,
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": true,
       "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
