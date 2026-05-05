@@ -1,5 +1,5 @@
 {
-  "reportDate": "April 29, 2026",
+  "reportDate": "May 5, 2026",
   "stats": {
     "totalItems": 14,
     "completed": 11,
@@ -191,7 +191,7 @@
     "RMX": null,
     "RBR": null
   },
-  "syncedAt": "2026-04-29T19:32:41.347Z",
+  "syncedAt": "2026-05-05T15:40:44.262Z",
   "accounts": {
     "totalLive": 5314
   }
