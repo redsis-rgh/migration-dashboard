@@ -1,6 +1,6 @@
 {
   "source": "monday-board",
-  "syncedAt": "2026-05-05T15:41:23.939Z",
+  "syncedAt": "2026-05-20T17:01:40.186Z",
   "board": {
     "id": "18403115173",
     "name": "Redix Portal",
@@ -582,7 +582,7 @@
       "id": "11706585241",
       "name": "- Revisar proceso para envío directo de PDF a impresora.",
       "group": "Settings",
-      "status": "Late",
+      "status": "On Hold",
       "owners": [
         "Michael Habib"
       ],
@@ -592,12 +592,12 @@
       "timelineStart": "2026-04-07",
       "timelineEnd": "2026-04-07",
       "dueDate": "2026-04-07",
-      "completedDate": null,
+      "completedDate": "2026-05-19",
       "isDone": false,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
-      "isOnHold": false,
+      "isLate": false,
+      "isOnHold": true,
       "hasMultipleOwners": false
     },
     {
@@ -606,21 +606,23 @@
       "group": "Proposal",
       "status": "Done",
       "owners": [
-        "Michael Habib"
+        "Michael Habib",
+        "Vitor dos Santos Rosa"
       ],
       "ownerIds": [
-        1201346
+        1201346,
+        62060220
       ],
       "timelineStart": "2026-04-07",
       "timelineEnd": "2026-04-07",
       "dueDate": "2026-04-07",
-      "completedDate": null,
+      "completedDate": "2026-05-19",
       "isDone": true,
       "isWorking": false,
       "isTodo": false,
       "isLate": false,
       "isOnHold": false,
-      "hasMultipleOwners": false
+      "hasMultipleOwners": true
     },
     {
       "id": "11706595357",
@@ -1000,23 +1002,25 @@
       "id": "11707099865",
       "name": "- Implementar diseño de proposal en nueva rama basada en develop.",
       "group": "Proposal",
-      "status": "Late",
+      "status": "Future steps",
       "owners": [
-        "Michael Habib"
+        "Michael Habib",
+        "Vitor dos Santos Rosa"
       ],
       "ownerIds": [
-        1201346
+        1201346,
+        62060220
       ],
       "timelineStart": "2026-04-08",
       "timelineEnd": "2026-04-08",
       "dueDate": "2026-04-08",
-      "completedDate": null,
+      "completedDate": "2026-05-19",
       "isDone": false,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
-      "hasMultipleOwners": false
+      "hasMultipleOwners": true
     },
     {
       "id": "11707102939",
@@ -1814,7 +1818,7 @@
       "id": "11716342588",
       "name": "Implementación diseño proposal (nueva rama)",
       "group": "Quotation",
-      "status": "Late",
+      "status": "To Do",
       "owners": [
         "Michael Habib"
       ],
@@ -1824,11 +1828,11 @@
       "timelineStart": "2026-04-09",
       "timelineEnd": "2026-04-09",
       "dueDate": "2026-04-09",
-      "completedDate": null,
+      "completedDate": "2026-05-19",
       "isDone": false,
       "isWorking": false,
-      "isTodo": false,
-      "isLate": true,
+      "isTodo": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -1880,7 +1884,7 @@
       "id": "11716342652",
       "name": "Revisión envío PDF a impresora",
       "group": "Quotation",
-      "status": "Late",
+      "status": "Blocked",
       "owners": [
         "Michael Habib"
       ],
@@ -1890,11 +1894,11 @@
       "timelineStart": "2026-04-09",
       "timelineEnd": "2026-04-09",
       "dueDate": "2026-04-09",
-      "completedDate": null,
+      "completedDate": "2026-05-19",
       "isDone": false,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -2254,21 +2258,21 @@
       "id": "11736935842",
       "name": "CRUD Assembly.",
       "group": "Productos/Items",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-13",
-      "timelineEnd": "2026-04-13",
+      "timelineStart": "2026-05-04",
+      "timelineEnd": "2026-05-09",
       "dueDate": "2026-04-13",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-05-09",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -2396,7 +2400,7 @@
       "timelineStart": "2026-04-09",
       "timelineEnd": "2026-04-13",
       "dueDate": "2026-04-13",
-      "completedDate": null,
+      "completedDate": "2026-05-19",
       "isDone": false,
       "isWorking": false,
       "isTodo": false,
@@ -3422,21 +3426,21 @@
       "id": "11746283363",
       "name": "Procedimientos de contingencia Playground QB y máquinas conectadas",
       "group": "PlayGround Quickbooks",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
+      "timelineStart": "2026-04-30",
+      "timelineEnd": "2026-04-30",
       "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-05-07",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -3488,21 +3492,21 @@
       "id": "11746285620",
       "name": "Consolidado de credenciales, IDs, IPs - Playground QB",
       "group": "PlayGround Quickbooks",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-15",
-      "timelineEnd": "2026-04-15",
+      "timelineStart": "2026-04-30",
+      "timelineEnd": "2026-04-30",
       "dueDate": "2026-04-15",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-05-07",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -4038,21 +4042,21 @@
       "id": "11806336053",
       "name": "Inventario de flujos n8n (dev y cloud)",
       "group": "PlayGround Quickbooks",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-22",
-      "timelineEnd": "2026-04-22",
+      "timelineStart": "2026-04-30",
+      "timelineEnd": "2026-04-30",
       "dueDate": "2026-04-22",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-05-07",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -4060,21 +4064,21 @@
       "id": "11806336054",
       "name": "Migración a n8n encolado y productivo",
       "group": "PlayGround Quickbooks",
-      "status": "Late",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": "2026-04-22",
-      "timelineEnd": "2026-04-22",
+      "timelineStart": "2026-04-28",
+      "timelineEnd": "2026-04-30",
       "dueDate": "2026-04-22",
-      "completedDate": null,
-      "isDone": false,
+      "completedDate": "2026-05-07",
+      "isDone": true,
       "isWorking": false,
       "isTodo": false,
-      "isLate": true,
+      "isLate": false,
       "isOnHold": false,
       "hasMultipleOwners": false
     },
@@ -4896,15 +4900,81 @@
       "id": "11879963158",
       "name": "Habilitación sedes TSI · RRC — QB Playground",
       "group": "PlayGround Quickbooks",
-      "status": "To Do",
+      "status": "Done",
       "owners": [
         "Luis Dominguez Marquez"
       ],
       "ownerIds": [
         56420968
       ],
-      "timelineStart": null,
-      "timelineEnd": null,
+      "timelineStart": "2026-04-28",
+      "timelineEnd": "2026-04-29",
+      "dueDate": null,
+      "completedDate": "2026-05-07",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "11939888272",
+      "name": "eBay Inventory Manager",
+      "group": "Productos/Items",
+      "status": "Done",
+      "owners": [
+        "Luis Dominguez Marquez"
+      ],
+      "ownerIds": [
+        56420968
+      ],
+      "timelineStart": "2026-05-06",
+      "timelineEnd": "2026-05-07",
+      "dueDate": "2026-05-06",
+      "completedDate": "2026-05-07",
+      "isDone": true,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": false,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "12052637942",
+      "name": "test Mkek potte",
+      "group": "Proposal",
+      "status": "Late",
+      "owners": [
+        "Michael Habib"
+      ],
+      "ownerIds": [
+        1201346
+      ],
+      "timelineStart": "2026-04-01",
+      "timelineEnd": "2026-04-30",
+      "dueDate": null,
+      "completedDate": null,
+      "isDone": false,
+      "isWorking": false,
+      "isTodo": false,
+      "isLate": true,
+      "isOnHold": false,
+      "hasMultipleOwners": false
+    },
+    {
+      "id": "12052656036",
+      "name": "Test 2",
+      "group": "Proposal",
+      "status": "To Do",
+      "owners": [
+        "Michael Habib"
+      ],
+      "ownerIds": [
+        1201346
+      ],
+      "timelineStart": "2026-04-01",
+      "timelineEnd": "2026-04-30",
       "dueDate": null,
       "completedDate": null,
       "isDone": false,
